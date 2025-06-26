@@ -6,21 +6,22 @@
   <title>Sanil Raj | Engineering Manager & GenAI Architect</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-      --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      --primary-color: #e4545b;
+      --primary-gradient: linear-gradient(135deg, #e4545b 0%, #b93548 100%);
+      --secondary-gradient: linear-gradient(135deg, #ff9a9e 0%, #e4545b 100%);
+      --accent-gradient: linear-gradient(135deg, #e4545b 0%, #ffbd69 100%);
       --dark-gradient: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 100%);
     }
     
     * {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Raleway', sans-serif;
     }
-    
+
     .space-grotesk {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Raleway', sans-serif;
     }
     
     /* Animated Background */
@@ -31,7 +32,7 @@
       width: 100%;
       height: 100%;
       z-index: -1;
-      background: linear-gradient(-45deg, #0a0a0a, #1a1a1a, #2a2a2a, #1a1a1a);
+      background: linear-gradient(-45deg, #ffffff, #f7f7f7, #e9e9e9, #f7f7f7);
       background-size: 400% 400%;
       animation: gradientShift 15s ease infinite;
     }
@@ -55,7 +56,7 @@
     
     .particle {
       position: absolute;
-      background: rgba(102, 126, 234, 0.6);
+      background: rgba(228, 84, 91, 0.6);
       border-radius: 50%;
       animation: float 20s infinite linear;
     }
@@ -79,17 +80,17 @@
     
     /* Glassmorphism */
     .glass {
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(0, 0, 0, 0.03);
       backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
     }
-    
+
     .glass-light {
-      background: rgba(255, 255, 255, 0.95);
+      background: #fff;
       backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
     }
     
     /* Advanced Hover Effects */
@@ -119,9 +120,8 @@
     
     /* Navigation */
     .nav-blur {
-      background: rgba(10, 10, 10, 0.8);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      background: var(--primary-color);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
     
     .nav-link {
@@ -160,7 +160,7 @@
       height: 200px;
       border-radius: 50%;
       border: 4px solid transparent;
-      background: var(--primary-gradient);
+      background: var(--primary-color);
       padding: 4px;
       animation: pulse 3s ease-in-out infinite;
     }
@@ -179,16 +179,15 @@
     
     /* Skill Cards */
     .skill-card {
-      background: rgba(255, 255, 255, 0.03);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: #fff;
+      border: 1px solid #e5e7eb;
       transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     }
-    
+
     .skill-card:hover {
-      background: rgba(255, 255, 255, 0.08);
       transform: translateY(-5px);
-      border-color: rgba(102, 126, 234, 0.5);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
     }
     
     .skill-tag {
@@ -215,12 +214,12 @@
     
     /* Project Cards */
     .project-card {
-      background: rgba(255, 255, 255, 0.02);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: #fff;
+      border: 1px solid #e5e7eb;
       transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       position: relative;
       overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     }
     
     .project-card::before {
@@ -239,11 +238,10 @@
     .project-card:hover::before {
       opacity: 0.05;
     }
-    
+
     .project-card:hover {
       transform: translateY(-20px) scale(1.02);
-      border-color: rgba(102, 126, 234, 0.5);
-      box-shadow: 0 30px 60px rgba(102, 126, 234, 0.2);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
     }
     
     /* Experience Timeline */
@@ -276,12 +274,12 @@
       height: 16px;
       border-radius: 50%;
       background: var(--primary-gradient);
-      border: 4px solid #0a0a0a;
+      border: 4px solid #fff;
     }
     
     /* Contact Section */
     .contact-card {
-      background: var(--primary-gradient);
+      background: var(--primary-color);
       transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
@@ -321,7 +319,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: #0a0a0a;
+      background: var(--primary-color);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -337,8 +335,8 @@
     .loader {
       width: 50px;
       height: 50px;
-      border: 3px solid rgba(102, 126, 234, 0.3);
-      border-top: 3px solid #667eea;
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      border-top: 3px solid #fff;
       border-radius: 50%;
       animation: spin 1s linear infinite;
     }
@@ -354,7 +352,7 @@
     }
     
     ::-webkit-scrollbar-track {
-      background: #1a1a1a;
+      background: #f3f3f3;
     }
     
     ::-webkit-scrollbar-thumb {
@@ -367,7 +365,7 @@
     }
   </style>
 </head>
-<body class="bg-gray-900 text-white overflow-x-hidden">
+<body class="bg-gray-50 text-gray-900 overflow-x-hidden">
   <!-- Loading Overlay -->
   <div class="loading-overlay" id="loading">
     <div class="loader"></div>
@@ -385,18 +383,18 @@
       <div class="flex justify-between items-center">
         <div class="text-2xl font-bold gradient-text space-grotesk">Sanil Raj</div>
         <div class="hidden md:flex space-x-8">
-          <a href="#home" class="nav-link px-4 py-2 rounded-lg text-gray-300 hover:text-white transition-all">Home</a>
-          <a href="#about" class="nav-link px-4 py-2 rounded-lg text-gray-300 hover:text-white transition-all">About</a>
-          <a href="#skills" class="nav-link px-4 py-2 rounded-lg text-gray-300 hover:text-white transition-all">Skills</a>
-          <a href="#experience" class="nav-link px-4 py-2 rounded-lg text-gray-300 hover:text-white transition-all">Experience</a>
-          <a href="#projects" class="nav-link px-4 py-2 rounded-lg text-gray-300 hover:text-white transition-all">Projects</a>
-          <a href="#contact" class="nav-link px-4 py-2 rounded-lg text-gray-300 hover:text-white transition-all">Contact</a>
+          <a href="#home" class="nav-link px-4 py-2 rounded-lg text-white">Home</a>
+          <a href="#about" class="nav-link px-4 py-2 rounded-lg text-white">About</a>
+          <a href="#skills" class="nav-link px-4 py-2 rounded-lg text-white">Skills</a>
+          <a href="#experience" class="nav-link px-4 py-2 rounded-lg text-white">Experience</a>
+          <a href="#projects" class="nav-link px-4 py-2 rounded-lg text-white">Projects</a>
+          <a href="#contact" class="nav-link px-4 py-2 rounded-lg text-white">Contact</a>
         </div>
         <div class="flex space-x-4">
-          <a href="mailto:sanilraj@gmail.com" class="text-gray-300 hover:text-white transition-colors text-xl">
+          <a href="mailto:sanilraj@gmail.com" class="text-gray-700 hover:text-white transition-colors text-xl">
             <i class="fas fa-envelope"></i>
           </a>
-          <a href="https://linkedin.com/in/sanilraj" class="text-gray-300 hover:text-white transition-colors text-xl">
+          <a href="https://linkedin.com/in/sanilraj" class="text-gray-700 hover:text-white transition-colors text-xl">
             <i class="fab fa-linkedin"></i>
           </a>
         </div>
@@ -413,15 +411,15 @@
       <h1 class="text-6xl md:text-8xl font-black mb-6 space-grotesk">
         <span class="gradient-text">Sanil</span> <span class="gradient-text-accent">Raj</span>
       </h1>
-      <p class="text-2xl md:text-3xl mb-4 text-gray-300 font-light">Engineering Manager & GenAI Architect</p>
-      <p class="text-lg md:text-xl mb-12 text-gray-400 max-w-2xl mx-auto">
+      <p class="text-2xl md:text-3xl mb-4 text-gray-700 font-light">Engineering Manager & GenAI Architect</p>
+      <p class="text-lg md:text-xl mb-12 text-gray-600 max-w-2xl mx-auto">
         Transforming complex requirements into scalable, AI-driven infrastructure solutions
       </p>
       <div class="flex flex-col sm:flex-row gap-6 justify-center">
         <a href="#contact" class="contact-card px-8 py-4 rounded-full text-white font-semibold text-lg hover:scale-105 transition-all">
           Let's Connect
         </a>
-        <a href="#projects" class="glass px-8 py-4 rounded-full text-white font-semibold text-lg hover:scale-105 transition-all border border-white/20">
+        <a href="#projects" class="glass px-8 py-4 rounded-full text-white font-semibold text-lg hover:scale-105 transition-all border border-gray-300">
           View My Work
         </a>
       </div>
@@ -562,8 +560,8 @@
               <h3 class="text-3xl font-bold text-white mb-2">Engineering Manager & Technical Architect</h3>
               <span class="gradient-text font-bold text-lg">May 2023 – Present</span>
             </div>
-            <p class="text-gray-300 mb-6 text-lg">Trianz Digital Consulting Pvt. Ltd. • Bangalore</p>
-            <ul class="text-gray-400 space-y-3">
+            <p class="text-gray-700 mb-6 text-lg">Trianz Digital Consulting Pvt. Ltd. • Bangalore</p>
+            <ul class="text-gray-600 space-y-3">
               <li class="flex items-start"><i class="fas fa-check-circle text-green-400 mr-3 mt-1"></i>Leading the architecture and design of GenAI-powered automation tools and hybrid infrastructure solutions.</li>
               <li class="flex items-start"><i class="fas fa-check-circle text-green-400 mr-3 mt-1"></i>Implemented CIS-based compliance automation and GenAI use cases such as auto-resolution, RAG-based help bots, and RCA flows using Neo4j + LLMs.</li>
               <li class="flex items-start"><i class="fas fa-check-circle text-green-400 mr-3 mt-1"></i>Worked with Kafka, AWS SSM, Node-RED, and Terraform for lifecycle management and provisioning automation.</li>
@@ -576,8 +574,8 @@
               <h3 class="text-3xl font-bold text-white mb-2">IT Infrastructure Architect</h3>
               <span class="gradient-text font-bold text-lg">Sep 2014 – May 2023</span>
             </div>
-            <p class="text-gray-300 mb-6 text-lg">Kyndryl (formerly IBM India) • Bangalore</p>
-            <ul class="text-gray-400 space-y-3">
+            <p class="text-gray-700 mb-6 text-lg">Kyndryl (formerly IBM India) • Bangalore</p>
+            <ul class="text-gray-600 space-y-3">
               <li class="flex items-start"><i class="fas fa-check-circle text-green-400 mr-3 mt-1"></i>Designed scalable and highly available infrastructure management solutions for enterprise environments.</li>
               <li class="flex items-start"><i class="fas fa-check-circle text-green-400 mr-3 mt-1"></i>Integrated DevOps practices and automation for improved delivery and monitoring workflows.</li>
             </ul>
@@ -589,8 +587,8 @@
               <h3 class="text-3xl font-bold text-white mb-2">IT Operations Team Lead</h3>
               <span class="gradient-text font-bold text-lg">Sep 2008 – Jun 2014</span>
             </div>
-            <p class="text-gray-300 mb-6 text-lg">Accenture • Bangalore</p>
-            <ul class="text-gray-400 space-y-3">
+            <p class="text-gray-700 mb-6 text-lg">Accenture • Bangalore</p>
+            <ul class="text-gray-600 space-y-3">
               <li class="flex items-start"><i class="fas fa-check-circle text-green-400 mr-3 mt-1"></i>Led Linux/VMware infrastructure operations and developed scripts to automate monitoring and maintenance tasks.</li>
             </ul>
           </div>
@@ -612,7 +610,7 @@
             <i class="fas fa-robot"></i>
           </div>
           <h3 class="text-2xl font-bold mb-4 text-white">GenAI Incident Management</h3>
-          <p class="text-gray-400 mb-6 leading-relaxed">Advanced incident auto-resolution system with RAG-based assistants and Neo4j + LangChain-based RCA graphs for intelligent problem solving.</p>
+          <p class="text-gray-600 mb-6 leading-relaxed">Advanced incident auto-resolution system with RAG-based assistants and Neo4j + LangChain-based RCA graphs for intelligent problem solving.</p>
           <div class="flex flex-wrap gap-2 mb-6">
             <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-xs font-semibold">Neo4j</span>
             <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-xs font-semibold">LangChain</span>
@@ -628,7 +626,7 @@
             <i class="fas fa-cloud"></i>
           </div>
           <h3 class="text-2xl font-bold mb-4 text-white">Hybrid Cloud Patch Management</h3>
-          <p class="text-gray-400 mb-6 leading-relaxed">Comprehensive multi-cloud patch management solution with automated deployment and rollback capabilities.</p>
+          <p class="text-gray-600 mb-6 leading-relaxed">Comprehensive multi-cloud patch management solution with automated deployment and rollback capabilities.</p>
           <div class="flex flex-wrap gap-2 mb-6">
             <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-semibold">AWS</span>
             <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-semibold">Azure</span>
@@ -644,7 +642,7 @@
             <i class="fas fa-shield-alt"></i>
           </div>
           <h3 class="text-2xl font-bold mb-4 text-white">Security & Compliance Automation</h3>
-          <p class="text-gray-400 mb-6 leading-relaxed">Automated CIS benchmark enforcement system using Prowler and RedHat tools for continuous compliance monitoring.</p>
+          <p class="text-gray-600 mb-6 leading-relaxed">Automated CIS benchmark enforcement system using Prowler and RedHat tools for continuous compliance monitoring.</p>
           <div class="flex flex-wrap gap-2 mb-6">
             <span class="bg-green-600 text-white px-3 py-1 rounded-full text-xs font-semibold">Prowler</span>
             <span class="bg-green-600 text-white px-3 py-1 rounded-full text-xs font-semibold">CIS</span>
@@ -665,7 +663,7 @@
       <div class="mb-20 fade-up">
         <h2 class="text-5xl font-bold mb-6 gradient-text space-grotesk">Let's Build Something Amazing</h2>
         <div class="w-32 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-8"></div>
-        <p class="text-xl text-gray-400">Ready to transform your infrastructure with cutting-edge AI solutions?</p>
+        <p class="text-xl text-gray-600">Ready to transform your infrastructure with cutting-edge AI solutions?</p>
       </div>
       <div class="glass-light rounded-3xl p-12 fade-up">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
@@ -692,9 +690,9 @@
   </section>
 
   <!-- Footer -->
-  <footer class="py-12 border-t border-white/10">
+  <footer class="py-12 border-t border-gray-300">
     <div class="max-w-6xl mx-auto px-6 text-center">
-      <p class="text-gray-400">&copy; 2025 Sanil Raj. Crafted with passion and precision.</p>
+      <p class="text-gray-600">&copy; 2025 Sanil Raj. Crafted with passion and precision.</p>
     </div>
   </footer>
 

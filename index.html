@@ -329,7 +329,7 @@
       transition: opacity 0.5s, visibility 0.5s;
     }
     
-    .loading-overlay.hidden {
+    .loading-overlay.fade-out {
       opacity: 0;
       visibility: hidden;
     }
@@ -702,7 +702,7 @@
     // Loading Animation
     window.addEventListener('load', () => {
       setTimeout(() => {
-        document.getElementById('loading').classList.add('hidden');
+        document.getElementById('loading').classList.add('fade-out');
       }, 1000);
     });
 

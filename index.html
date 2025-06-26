@@ -6,113 +6,398 @@
   <title>Sanil Raj | Engineering Manager & GenAI Architect</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+    :root {
+      --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      --dark-gradient: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 100%);
+    }
     
     * {
       font-family: 'Inter', sans-serif;
     }
     
-    .gradient-bg {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    .space-grotesk {
+      font-family: 'Space Grotesk', sans-serif;
     }
     
-    .glass-card {
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+    /* Animated Background */
+    .animated-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: linear-gradient(-45deg, #0a0a0a, #1a1a1a, #2a2a2a, #1a1a1a);
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
     }
     
-    .animate-float {
-      animation: float 6s ease-in-out infinite;
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
+    /* Floating Particles */
+    .particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+    
+    .particle {
+      position: absolute;
+      background: rgba(102, 126, 234, 0.6);
+      border-radius: 50%;
+      animation: float 20s infinite linear;
     }
     
     @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-20px); }
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+      }
     }
     
-    .skill-tag {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      transition: all 0.3s ease;
+    /* Glassmorphism */
+    .glass {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
     }
     
-    .skill-tag:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+    .glass-light {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     }
     
-    .project-card {
-      transition: all 0.3s ease;
-      background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+    /* Advanced Hover Effects */
+    .hover-lift {
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
     
-    .project-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    .hover-lift:hover {
+      transform: translateY(-15px) scale(1.02);
+      box-shadow: 0 25px 50px rgba(102, 126, 234, 0.3);
     }
     
-    .nav-link {
-      position: relative;
-      transition: all 0.3s ease;
-    }
-    
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      bottom: -5px;
-      left: 50%;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      transition: all 0.3s ease;
-      transform: translateX(-50%);
-    }
-    
-    .nav-link:hover::after {
-      width: 100%;
-    }
-    
-    .hero-text {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    /* Gradient Text */
+    .gradient-text {
+      background: var(--primary-gradient);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
     
-    .section-card {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    .gradient-text-accent {
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
     
-    .experience-card {
-      background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
-      border-left: 4px solid #667eea;
+    /* Navigation */
+    .nav-blur {
+      background: rgba(10, 10, 10, 0.8);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .nav-link {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .nav-link::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: var(--primary-gradient);
+      transition: left 0.5s;
+      z-index: -1;
+    }
+    
+    .nav-link:hover::before {
+      left: 0;
+    }
+    
+    /* Hero Section */
+    .hero-container {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .profile-image {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 4px solid transparent;
+      background: var(--primary-gradient);
+      padding: 4px;
+      animation: pulse 3s ease-in-out infinite;
+    }
+    
+    .profile-image img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    
+    /* Skill Cards */
+    .skill-card {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+    
+    .skill-card:hover {
+      background: rgba(255, 255, 255, 0.08);
+      transform: translateY(-5px);
+      border-color: rgba(102, 126, 234, 0.5);
+    }
+    
+    .skill-tag {
+      background: var(--primary-gradient);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .skill-tag::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      transition: left 0.3s;
+    }
+    
+    .skill-tag:hover::before {
+      left: 0;
+    }
+    
+    /* Project Cards */
+    .project-card {
+      background: rgba(255, 255, 255, 0.02);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--primary-gradient);
+      opacity: 0;
+      transition: opacity 0.3s;
+      z-index: -1;
+    }
+    
+    .project-card:hover::before {
+      opacity: 0.05;
+    }
+    
+    .project-card:hover {
+      transform: translateY(-20px) scale(1.02);
+      border-color: rgba(102, 126, 234, 0.5);
+      box-shadow: 0 30px 60px rgba(102, 126, 234, 0.2);
+    }
+    
+    /* Experience Timeline */
+    .timeline {
+      position: relative;
+    }
+    
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 30px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--primary-gradient);
+    }
+    
+    .timeline-item {
+      position: relative;
+      padding-left: 80px;
+      margin-bottom: 40px;
+    }
+    
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: 22px;
+      top: 0;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--primary-gradient);
+      border: 4px solid #0a0a0a;
+    }
+    
+    /* Contact Section */
+    .contact-card {
+      background: var(--primary-gradient);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .contact-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.6s;
+    }
+    
+    .contact-card:hover::before {
+      left: 100%;
+    }
+    
+    /* Scroll Animations */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+    
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Loading Animation */
+    .loading-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #0a0a0a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.5s, visibility 0.5s;
+    }
+    
+    .loading-overlay.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+    
+    .loader {
+      width: 50px;
+      height: 50px;
+      border: 3px solid rgba(102, 126, 234, 0.3);
+      border-top: 3px solid #667eea;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    
+    ::-webkit-scrollbar-track {
+      background: #1a1a1a;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+      background: var(--primary-gradient);
+      border-radius: 4px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--secondary-gradient);
     }
   </style>
 </head>
 <body class="bg-gray-900 text-white overflow-x-hidden">
+  <!-- Loading Overlay -->
+  <div class="loading-overlay" id="loading">
+    <div class="loader"></div>
+  </div>
+
+  <!-- Animated Background -->
+  <div class="animated-bg"></div>
+
+  <!-- Particles -->
+  <div class="particles" id="particles"></div>
+
   <!-- Navigation -->
-  <nav class="fixed w-full top-0 z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center py-4">
-        <div class="text-2xl font-bold hero-text">Sanil Raj</div>
+  <nav class="fixed w-full top-0 z-50 nav-blur">
+    <div class="max-w-7xl mx-auto px-6 py-4">
+      <div class="flex justify-between items-center">
+        <div class="text-2xl font-bold gradient-text space-grotesk">Sanil Raj</div>
         <div class="hidden md:flex space-x-8">
-          <a href="#home" class="nav-link text-gray-300 hover:text-white">Home</a>
-          <a href="#about" class="nav-link text-gray-300 hover:text-white">About</a>
-          <a href="#skills" class="nav-link text-gray-300 hover:text-white">Skills</a>
-          <a href="#experience" class="nav-link text-gray-300 hover:text-white">Experience</a>
-          <a href="#projects" class="nav-link text-gray-300 hover:text-white">Projects</a>
-          <a href="#contact" class="nav-link text-gray-300 hover:text-white">Contact</a>
+          <a href="#home" class="nav-link px-4 py-2 rounded-lg text-gray-300 hover:text-white transition-all">Home</a>
+          <a href="#about" class="nav-link px-4 py-2 rounded-lg text-gray-300 hover:text-white transition-all">About</a>
+          <a href="#skills" class="nav-link px-4 py-2 rounded-lg text-gray-300 hover:text-white transition-all">Skills</a>
+          <a href="#experience" class="nav-link px-4 py-2 rounded-lg text-gray-300 hover:text-white transition-all">Experience</a>
+          <a href="#projects" class="nav-link px-4 py-2 rounded-lg text-gray-300 hover:text-white transition-all">Projects</a>
+          <a href="#contact" class="nav-link px-4 py-2 rounded-lg text-gray-300 hover:text-white transition-all">Contact</a>
         </div>
         <div class="flex space-x-4">
-          <a href="mailto:sanilraj@gmail.com" class="text-gray-300 hover:text-white transition-colors">
-            <i class="fas fa-envelope text-xl"></i>
+          <a href="mailto:sanilraj@gmail.com" class="text-gray-300 hover:text-white transition-colors text-xl">
+            <i class="fas fa-envelope"></i>
           </a>
-          <a href="https://linkedin.com/in/sanilraj" class="text-gray-300 hover:text-white transition-colors">
-            <i class="fab fa-linkedin text-xl"></i>
+          <a href="https://linkedin.com/in/sanilraj" class="text-gray-300 hover:text-white transition-colors text-xl">
+            <i class="fab fa-linkedin"></i>
           </a>
         </div>
       </div>
@@ -120,55 +405,56 @@
   </nav>
 
   <!-- Hero Section -->
-  <section id="home" class="min-h-screen flex items-center justify-center gradient-bg relative overflow-hidden">
-    <div class="absolute inset-0 bg-black/20"></div>
-    <div class="relative z-10 text-center px-4">
-      <div class="animate-float mb-8">
-        <img src="assets/image/sanil-profile.jpeg" alt="Sanil Raj" class="w-48 h-48 rounded-full mx-auto border-4 border-white/30 shadow-2xl object-cover">
+  <section id="home" class="hero-container">
+    <div class="text-center px-6 fade-up">
+      <div class="profile-image mx-auto mb-8">
+        <img src="assets/image/sanil-profile.jpeg" alt="Sanil Raj">
       </div>
-      <h1 class="text-5xl md:text-7xl font-bold mb-6 text-white">
-        Sanil Raj
+      <h1 class="text-6xl md:text-8xl font-black mb-6 space-grotesk">
+        <span class="gradient-text">Sanil</span> <span class="gradient-text-accent">Raj</span>
       </h1>
-      <p class="text-xl md:text-2xl mb-4 text-white/90">Engineering Manager & GenAI Architect</p>
-      <p class="text-lg mb-8 text-white/80">Specializing in GenAI-driven Infrastructure & Automation Solutions</p>
-      <div class="flex justify-center space-x-6">
-        <a href="#contact" class="bg-white text-gray-900 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105">
-          Get In Touch
+      <p class="text-2xl md:text-3xl mb-4 text-gray-300 font-light">Engineering Manager & GenAI Architect</p>
+      <p class="text-lg md:text-xl mb-12 text-gray-400 max-w-2xl mx-auto">
+        Transforming complex requirements into scalable, AI-driven infrastructure solutions
+      </p>
+      <div class="flex flex-col sm:flex-row gap-6 justify-center">
+        <a href="#contact" class="contact-card px-8 py-4 rounded-full text-white font-semibold text-lg hover:scale-105 transition-all">
+          Let's Connect
         </a>
-        <a href="#projects" class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-gray-900 transition-all duration-300">
-          View Work
+        <a href="#projects" class="glass px-8 py-4 rounded-full text-white font-semibold text-lg hover:scale-105 transition-all border border-white/20">
+          View My Work
         </a>
       </div>
     </div>
   </section>
 
   <!-- About Section -->
-  <section id="about" class="py-20 bg-gray-900">
-    <div class="max-w-6xl mx-auto px-4">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold mb-4 hero-text">About Me</h2>
-        <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto"></div>
+  <section id="about" class="py-32 relative">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-20 fade-up">
+        <h2 class="text-5xl font-bold mb-6 gradient-text space-grotesk">About Me</h2>
+        <div class="w-32 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto"></div>
       </div>
-      <div class="section-card rounded-2xl p-8 md:p-12">
+      <div class="glass-light rounded-3xl p-12 hover-lift fade-up">
         <div class="text-gray-800 text-lg leading-relaxed">
-          <p class="mb-6">
-            Seasoned professional with over <span class="font-semibold text-purple-600">16 years of experience</span> in IT, specializing in designing and leading the development of advanced IT infrastructure and GenAI-driven management solutions.
+          <p class="mb-8 text-xl">
+            Seasoned professional with over <span class="font-bold gradient-text">16 years of experience</span> in IT, specializing in designing and leading the development of advanced IT infrastructure and GenAI-driven management solutions.
           </p>
-          <p class="mb-6">
-            Skilled in transforming complex requirements into scalable, efficient, and high-performing products for both cloud and on-premise environments. Proven track record of collaborating with product management teams to deliver automation and agentic AI-driven solutions that enhance IT operations.
+          <p class="mb-12 text-lg">
+            I transform complex requirements into scalable, efficient, and high-performing products for both cloud and on-premise environments. My expertise lies in collaborating with product management teams to deliver automation and agentic AI-driven solutions that enhance IT operations.
           </p>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
             <div class="text-center">
-              <div class="text-3xl font-bold text-purple-600 mb-2">16+</div>
-              <div class="text-gray-600">Years Experience</div>
+              <div class="text-5xl font-black gradient-text mb-4">16+</div>
+              <div class="text-gray-600 font-semibold">Years Experience</div>
             </div>
             <div class="text-center">
-              <div class="text-3xl font-bold text-purple-600 mb-2">50+</div>
-              <div class="text-gray-600">Projects Completed</div>
+              <div class="text-5xl font-black gradient-text mb-4">100+</div>
+              <div class="text-gray-600 font-semibold">Projects Delivered</div>
             </div>
             <div class="text-center">
-              <div class="text-3xl font-bold text-purple-600 mb-2">100%</div>
-              <div class="text-gray-600">Client Satisfaction</div>
+              <div class="text-5xl font-black gradient-text mb-4">50+</div>
+              <div class="text-gray-600 font-semibold">Technologies Mastered</div>
             </div>
           </div>
         </div>
@@ -177,79 +463,85 @@
   </section>
 
   <!-- Skills Section -->
-  <section id="skills" class="py-20 bg-gray-800">
-    <div class="max-w-6xl mx-auto px-4">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold mb-4 hero-text">Technical Skills</h2>
-        <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto"></div>
+  <section id="skills" class="py-32 relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-20 fade-up">
+        <h2 class="text-5xl font-bold mb-6 gradient-text space-grotesk">Technical Expertise</h2>
+        <div class="w-32 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto"></div>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="section-card rounded-xl p-6">
-          <h3 class="text-xl font-semibold mb-4 text-purple-600">
-            <i class="fas fa-robot mr-2"></i>GenAI & AI
-          </h3>
-          <div class="flex flex-wrap gap-2">
-            <span class="skill-tag text-white px-3 py-1 rounded-full text-sm">CrewAI</span>
-            <span class="skill-tag text-white px-3 py-1 rounded-full text-sm">LangChain</span>
-            <span class="skill-tag text-white px-3 py-1 rounded-full text-sm">LangGraph</span>
-            <span class="skill-tag text-white px-3 py-1 rounded-full text-sm">AWS Bedrock</span>
-            <span class="skill-tag text-white px-3 py-1 rounded-full text-sm">Neo4j</span>
-            <span class="skill-tag text-white px-3 py-1 rounded-full text-sm">ChromaDB</span>
+        <div class="skill-card rounded-2xl p-8 hover-lift fade-up">
+          <div class="text-4xl mb-6 gradient-text">
+            <i class="fas fa-robot"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-6 text-white">GenAI & AI</h3>
+          <div class="flex flex-wrap gap-3">
+            <span class="skill-tag text-white px-4 py-2 rounded-full text-sm font-semibold">CrewAI</span>
+            <span class="skill-tag text-white px-4 py-2 rounded-full text-sm font-semibold">LangChain</span>
+            <span class="skill-tag text-white px-4 py-2 rounded-full text-sm font-semibold">LangGraph</span>
+            <span class="skill-tag text-white px-4 py-2 rounded-full text-sm font-semibold">AWS Bedrock</span>
+            <span class="skill-tag text-white px-4 py-2 rounded-full text-sm font-semibold">Neo4j</span>
+            <span class="skill-tag text-white px-4 py-2 rounded-full text-sm font-semibold">ChromaDB</span>
           </div>
         </div>
-        <div class="section-card rounded-xl p-6">
-          <h3 class="text-xl font-semibold mb-4 text-purple-600">
-            <i class="fas fa-cloud mr-2"></i>Cloud Platforms
-          </h3>
-          <div class="flex flex-wrap gap-2">
-            <span class="skill-tag text-white px-3 py-1 rounded-full text-sm">AWS</span>
-            <span class="skill-tag text-white px-3 py-1 rounded-full text-sm">Azure</span>
-            <span class="skill-tag text-white px-3 py-1 rounded-full text-sm">GCP</span>
+        <div class="skill-card rounded-2xl p-8 hover-lift fade-up">
+          <div class="text-4xl mb-6 gradient-text">
+            <i class="fas fa-cloud"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-6 text-white">Cloud Platforms</h3>
+          <div class="flex flex-wrap gap-3">
+            <span class="skill-tag text-white px-4 py-2 rounded-full text-sm font-semibold">AWS</span>
+            <span class="skill-tag text-white px-4 py-2 rounded-full text-sm font-semibold">Azure</span>
+            <span class="skill-tag text-white px-4 py-2 rounded-full text-sm font-semibold">GCP</span>
           </div>
         </div>
-        <div class="section-card rounded-xl p-6">
-          <h3 class="text-xl font-semibold mb-4 text-purple-600">
-            <i class="fas fa-cogs mr-2"></i>DevOps & Automation
-          </h3>
-          <div class="flex flex-wrap gap-2">
-            <span class="skill-tag text-white px-3 py-1 rounded-full text-sm">Ansible</span>
-            <span class="skill-tag text-white px-3 py-1 rounded-full text-sm">Terraform</span>
-            <span class="skill-tag text-white px-3 py-1 rounded-full text-sm">Kubernetes</span>
-            <span class="skill-tag text-white px-3 py-1 rounded-full text-sm">Docker</span>
-            <span class="skill-tag text-white px-3 py-1 rounded-full text-sm">Jenkins</span>
+        <div class="skill-card rounded-2xl p-8 hover-lift fade-up">
+          <div class="text-4xl mb-6 gradient-text">
+            <i class="fas fa-cogs"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-6 text-white">DevOps & Automation</h3>
+          <div class="flex flex-wrap gap-3">
+            <span class="skill-tag text-white px-4 py-2 rounded-full text-sm font-semibold">Ansible</span>
+            <span class="skill-tag text-white px-4 py-2 rounded-full text-sm font-semibold">Terraform</span>
+            <span class="skill-tag text-white px-4 py-2 rounded-full text-sm font-semibold">Kubernetes</span>
+            <span class="skill-tag text-white px-4 py-2 rounded-full text-sm font-semibold">Docker</span>
+            <span class="skill-tag text-white px-4 py-2 rounded-full text-sm font-semibold">Jenkins</span>
           </div>
         </div>
-        <div class="section-card rounded-xl p-6">
-          <h3 class="text-xl font-semibold mb-4 text-purple-600">
-            <i class="fas fa-chart-line mr-2"></i>Monitoring & Security
-          </h3>
-          <div class="flex flex-wrap gap-2">
-            <span class="skill-tag text-white px-3 py-1 rounded-full text-sm">Prometheus</span>
-            <span class="skill-tag text-white px-3 py-1 rounded-full text-sm">Grafana</span>
-            <span class="skill-tag text-white px-3 py-1 rounded-full text-sm">ELK Stack</span>
-            <span class="skill-tag text-white px-3 py-1 rounded-full text-sm">Prowler</span>
+        <div class="skill-card rounded-2xl p-8 hover-lift fade-up">
+          <div class="text-4xl mb-6 gradient-text">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-6 text-white">Monitoring & Security</h3>
+          <div class="flex flex-wrap gap-3">
+            <span class="skill-tag text-white px-4 py-2 rounded-full text-sm font-semibold">Prometheus</span>
+            <span class="skill-tag text-white px-4 py-2 rounded-full text-sm font-semibold">Grafana</span>
+            <span class="skill-tag text-white px-4 py-2 rounded-full text-sm font-semibold">ELK Stack</span>
+            <span class="skill-tag text-white px-4 py-2 rounded-full text-sm font-semibold">Prowler</span>
           </div>
         </div>
-        <div class="section-card rounded-xl p-6">
-          <h3 class="text-xl font-semibold mb-4 text-purple-600">
-            <i class="fas fa-database mr-2"></i>Data & Messaging
-          </h3>
-          <div class="flex flex-wrap gap-2">
-            <span class="skill-tag text-white px-3 py-1 rounded-full text-sm">Kafka</span>
-            <span class="skill-tag text-white px-3 py-1 rounded-full text-sm">Redis</span>
-            <span class="skill-tag text-white px-3 py-1 rounded-full text-sm">PostgreSQL</span>
-            <span class="skill-tag text-white px-3 py-1 rounded-full text-sm">MongoDB</span>
+        <div class="skill-card rounded-2xl p-8 hover-lift fade-up">
+          <div class="text-4xl mb-6 gradient-text">
+            <i class="fas fa-database"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-6 text-white">Data & Messaging</h3>
+          <div class="flex flex-wrap gap-3">
+            <span class="skill-tag text-white px-4 py-2 rounded-full text-sm font-semibold">Kafka</span>
+            <span class="skill-tag text-white px-4 py-2 rounded-full text-sm font-semibold">Redis</span>
+            <span class="skill-tag text-white px-4 py-2 rounded-full text-sm font-semibold">PostgreSQL</span>
+            <span class="skill-tag text-white px-4 py-2 rounded-full text-sm font-semibold">MongoDB</span>
           </div>
         </div>
-        <div class="section-card rounded-xl p-6">
-          <h3 class="text-xl font-semibold mb-4 text-purple-600">
-            <i class="fas fa-server mr-2"></i>Infrastructure
-          </h3>
-          <div class="flex flex-wrap gap-2">
-            <span class="skill-tag text-white px-3 py-1 rounded-full text-sm">Linux</span>
-            <span class="skill-tag text-white px-3 py-1 rounded-full text-sm">VMware</span>
-            <span class="skill-tag text-white px-3 py-1 rounded-full text-sm">Windows</span>
-            <span class="skill-tag text-white px-3 py-1 rounded-full text-sm">Git</span>
+        <div class="skill-card rounded-2xl p-8 hover-lift fade-up">
+          <div class="text-4xl mb-6 gradient-text">
+            <i class="fas fa-server"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-6 text-white">Infrastructure</h3>
+          <div class="flex flex-wrap gap-3">
+            <span class="skill-tag text-white px-4 py-2 rounded-full text-sm font-semibold">Linux</span>
+            <span class="skill-tag text-white px-4 py-2 rounded-full text-sm font-semibold">VMware</span>
+            <span class="skill-tag text-white px-4 py-2 rounded-full text-sm font-semibold">Windows</span>
+            <span class="skill-tag text-white px-4 py-2 rounded-full text-sm font-semibold">Git</span>
           </div>
         </div>
       </div>
@@ -257,116 +549,110 @@
   </section>
 
   <!-- Experience Section -->
-  <section id="experience" class="py-20 bg-gray-900">
-    <div class="max-w-6xl mx-auto px-4">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold mb-4 hero-text">Experience</h2>
-        <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto"></div>
+  <section id="experience" class="py-32 relative">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-20 fade-up">
+        <h2 class="text-5xl font-bold mb-6 gradient-text space-grotesk">Professional Journey</h2>
+        <div class="w-32 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto"></div>
       </div>
-      <div class="space-y-8">
-        <div class="experience-card rounded-xl p-8 transition-all duration-300 hover:transform hover:scale-105">
-          <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-            <h3 class="text-2xl font-bold text-white">Engineering Manager & Technical Architect</h3>
-            <span class="text-purple-400 font-semibold">May 2023 – Present</span>
+      <div class="timeline">
+        <div class="timeline-item fade-up">
+          <div class="glass rounded-2xl p-8 hover-lift">
+            <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6">
+              <h3 class="text-3xl font-bold text-white mb-2">Engineering Manager & Technical Architect</h3>
+              <span class="gradient-text font-bold text-lg">May 2023 – Present</span>
+            </div>
+            <p class="text-gray-300 mb-6 text-lg">Trianz Digital Consulting Pvt. Ltd. • Bangalore</p>
+            <ul class="text-gray-400 space-y-3">
+              <li class="flex items-start"><i class="fas fa-check-circle text-green-400 mr-3 mt-1"></i>Leading the architecture and design of GenAI-powered automation tools and hybrid infrastructure solutions.</li>
+              <li class="flex items-start"><i class="fas fa-check-circle text-green-400 mr-3 mt-1"></i>Implemented CIS-based compliance automation and GenAI use cases such as auto-resolution, RAG-based help bots, and RCA flows using Neo4j + LLMs.</li>
+              <li class="flex items-start"><i class="fas fa-check-circle text-green-400 mr-3 mt-1"></i>Worked with Kafka, AWS SSM, Node-RED, and Terraform for lifecycle management and provisioning automation.</li>
+            </ul>
           </div>
-          <p class="text-gray-300 mb-4">Trianz Digital Consulting Pvt. Ltd. • Bangalore</p>
-          <ul class="text-gray-400 space-y-2">
-            <li class="flex items-start"><i class="fas fa-check-circle text-green-400 mr-2 mt-1"></i>Leading the architecture and design of GenAI-powered automation tools and hybrid infrastructure solutions.</li>
-            <li class="flex items-start"><i class="fas fa-check-circle text-green-400 mr-2 mt-1"></i>Implemented CIS-based compliance automation and GenAI use cases such as auto-resolution, RAG-based help bots, and RCA flows using Neo4j + LLMs.</li>
-            <li class="flex items-start"><i class="fas fa-check-circle text-green-400 mr-2 mt-1"></i>Worked with Kafka, AWS SSM, Node-RED, and Terraform for lifecycle management and provisioning automation.</li>
-          </ul>
         </div>
-        <div class="experience-card rounded-xl p-8 transition-all duration-300 hover:transform hover:scale-105">
-          <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-            <h3 class="text-2xl font-bold text-white">IT Infrastructure Architect</h3>
-            <span class="text-purple-400 font-semibold">Sep 2014 – May 2023</span>
+        <div class="timeline-item fade-up">
+          <div class="glass rounded-2xl p-8 hover-lift">
+            <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6">
+              <h3 class="text-3xl font-bold text-white mb-2">IT Infrastructure Architect</h3>
+              <span class="gradient-text font-bold text-lg">Sep 2014 – May 2023</span>
+            </div>
+            <p class="text-gray-300 mb-6 text-lg">Kyndryl (formerly IBM India) • Bangalore</p>
+            <ul class="text-gray-400 space-y-3">
+              <li class="flex items-start"><i class="fas fa-check-circle text-green-400 mr-3 mt-1"></i>Designed scalable and highly available infrastructure management solutions for enterprise environments.</li>
+              <li class="flex items-start"><i class="fas fa-check-circle text-green-400 mr-3 mt-1"></i>Integrated DevOps practices and automation for improved delivery and monitoring workflows.</li>
+            </ul>
           </div>
-          <p class="text-gray-300 mb-4">Kyndryl (formerly IBM India) • Bangalore</p>
-          <ul class="text-gray-400 space-y-2">
-            <li class="flex items-start"><i class="fas fa-check-circle text-green-400 mr-2 mt-1"></i>Designed scalable and highly available infrastructure management solutions for enterprise environments.</li>
-            <li class="flex items-start"><i class="fas fa-check-circle text-green-400 mr-2 mt-1"></i>Integrated DevOps practices and automation for improved delivery and monitoring workflows.</li>
-          </ul>
         </div>
-        <div class="experience-card rounded-xl p-8 transition-all duration-300 hover:transform hover:scale-105">
-          <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-            <h3 class="text-2xl font-bold text-white">IT Operations Team Lead</h3>
-            <span class="text-purple-400 font-semibold">Sep 2008 – Jun 2014</span>
+        <div class="timeline-item fade-up">
+          <div class="glass rounded-2xl p-8 hover-lift">
+            <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6">
+              <h3 class="text-3xl font-bold text-white mb-2">IT Operations Team Lead</h3>
+              <span class="gradient-text font-bold text-lg">Sep 2008 – Jun 2014</span>
+            </div>
+            <p class="text-gray-300 mb-6 text-lg">Accenture • Bangalore</p>
+            <ul class="text-gray-400 space-y-3">
+              <li class="flex items-start"><i class="fas fa-check-circle text-green-400 mr-3 mt-1"></i>Led Linux/VMware infrastructure operations and developed scripts to automate monitoring and maintenance tasks.</li>
+            </ul>
           </div>
-          <p class="text-gray-300 mb-4">Accenture • Bangalore</p>
-          <ul class="text-gray-400 space-y-2">
-            <li class="flex items-start"><i class="fas fa-check-circle text-green-400 mr-2 mt-1"></i>Led Linux/VMware infrastructure operations and developed scripts to automate monitoring and maintenance tasks.</li>
-          </ul>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Projects Section -->
-  <section id="projects" class="py-20 bg-gray-800">
-    <div class="max-w-6xl mx-auto px-4">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold mb-4 hero-text">Key Projects</h2>
-        <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto"></div>
+  <section id="projects" class="py-32 relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-20 fade-up">
+        <h2 class="text-5xl font-bold mb-6 gradient-text space-grotesk">Featured Projects</h2>
+        <div class="w-32 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto"></div>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="project-card rounded-xl p-6 border border-gray-700">
-          <div class="text-3xl mb-4 text-purple-400">
+        <div class="project-card rounded-2xl p-8 fade-up">
+          <div class="text-5xl mb-6 gradient-text">
             <i class="fas fa-robot"></i>
           </div>
-          <h3 class="text-xl font-bold mb-3 text-white">GenAI Incident Management</h3>
-          <p class="text-gray-400 mb-4">Incident Auto-Resolution, RAG-based assistants, Neo4j + LangChain-based RCA graphs</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="bg-purple-600 text-white px-2 py-1 rounded text-xs">Neo4j</span>
-            <span class="bg-purple-600 text-white px-2 py-1 rounded text-xs">LangChain</span>
-            <span class="bg-purple-600 text-white px-2 py-1 rounded text-xs">RAG</span>
+          <h3 class="text-2xl font-bold mb-4 text-white">GenAI Incident Management</h3>
+          <p class="text-gray-400 mb-6 leading-relaxed">Advanced incident auto-resolution system with RAG-based assistants and Neo4j + LangChain-based RCA graphs for intelligent problem solving.</p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-xs font-semibold">Neo4j</span>
+            <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-xs font-semibold">LangChain</span>
+            <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-xs font-semibold">RAG</span>
+            <span class="bg-purple-600 text-white px-3 py-1 rounded-full text-xs font-semibold">AI</span>
+          </div>
+          <div class="text-green-400 font-semibold">
+            <i class="fas fa-chart-line mr-2"></i>45% MTTR Reduction
           </div>
         </div>
-        <div class="project-card rounded-xl p-6 border border-gray-700">
-          <div class="text-3xl mb-4 text-blue-400">
+        <div class="project-card rounded-2xl p-8 fade-up">
+          <div class="text-5xl mb-6 gradient-text">
             <i class="fas fa-cloud"></i>
           </div>
-          <h3 class="text-xl font-bold mb-3 text-white">Hybrid Cloud Patch Management</h3>
-          <p class="text-gray-400 mb-4">Reduced manual efforts by 40% with multi-cloud support</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="bg-blue-600 text-white px-2 py-1 rounded text-xs">AWS</span>
-            <span class="bg-blue-600 text-white px-2 py-1 rounded text-xs">Azure</span>
-            <span class="bg-blue-600 text-white px-2 py-1 rounded text-xs">Automation</span>
+          <h3 class="text-2xl font-bold mb-4 text-white">Hybrid Cloud Patch Management</h3>
+          <p class="text-gray-400 mb-6 leading-relaxed">Comprehensive multi-cloud patch management solution with automated deployment and rollback capabilities.</p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-semibold">AWS</span>
+            <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-semibold">Azure</span>
+            <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-semibold">Automation</span>
+            <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-semibold">Terraform</span>
+          </div>
+          <div class="text-green-400 font-semibold">
+            <i class="fas fa-chart-line mr-2"></i>40% Effort Reduction
           </div>
         </div>
-        <div class="project-card rounded-xl p-6 border border-gray-700">
-          <div class="text-3xl mb-4 text-green-400">
+        <div class="project-card rounded-2xl p-8 fade-up">
+          <div class="text-5xl mb-6 gradient-text">
             <i class="fas fa-shield-alt"></i>
           </div>
-          <h3 class="text-xl font-bold mb-3 text-white">Security & Compliance Automation</h3>
-          <p class="text-gray-400 mb-4">CIS benchmark enforcement using Prowler & RedHat tools</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="bg-green-600 text-white px-2 py-1 rounded text-xs">Prowler</span>
-            <span class="bg-green-600 text-white px-2 py-1 rounded text-xs">CIS</span>
-            <span class="bg-green-600 text-white px-2 py-1 rounded text-xs">Compliance</span>
+          <h3 class="text-2xl font-bold mb-4 text-white">Security & Compliance Automation</h3>
+          <p class="text-gray-400 mb-6 leading-relaxed">Automated CIS benchmark enforcement system using Prowler and RedHat tools for continuous compliance monitoring.</p>
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="bg-green-600 text-white px-3 py-1 rounded-full text-xs font-semibold">Prowler</span>
+            <span class="bg-green-600 text-white px-3 py-1 rounded-full text-xs font-semibold">CIS</span>
+            <span class="bg-green-600 text-white px-3 py-1 rounded-full text-xs font-semibold">Compliance</span>
+            <span class="bg-green-600 text-white px-3 py-1 rounded-full text-xs font-semibold">Security</span>
           </div>
-        </div>
-        <div class="project-card rounded-xl p-6 border border-gray-700">
-          <div class="text-3xl mb-4 text-yellow-400">
-            <i class="fas fa-cubes"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-3 text-white">Cloud Provisioning Catalog</h3>
-          <p class="text-gray-400 mb-4">Terraform + AWS SSM + AWX-driven catalog for self-service deployment</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="bg-yellow-600 text-white px-2 py-1 rounded text-xs">Terraform</span>
-            <span class="bg-yellow-600 text-white px-2 py-1 rounded text-xs">AWS SSM</span>
-            <span class="bg-yellow-600 text-white px-2 py-1 rounded text-xs">AWX</span>
-          </div>
-        </div>
-        <div class="project-card rounded-xl p-6 border border-gray-700">
-          <div class="text-3xl mb-4 text-red-400">
-            <i class="fas fa-sync-alt"></i>
-          </div>
-          <h3 class="text-xl font-bold mb-3 text-white">Lifecycle Automation</h3>
-          <p class="text-gray-400 mb-4">Server Build/Decommissioning and automated remediation reducing MTTR by 45%</p>
-          <div class="flex flex-wrap gap-2">
-            <span class="bg-red-600 text-white px-2 py-1 rounded text-xs">Automation</span>
-            <span class="bg-red-600 text-white px-2 py-1 rounded text-xs">MTTR</span>
-            <span class="bg-red-600 text-white px-2 py-1 rounded text-xs">Lifecycle</span>
+          <div class="text-green-400 font-semibold">
+            <i class="fas fa-shield-alt mr-2"></i>100% Compliance
           </div>
         </div>
       </div>
@@ -374,64 +660,101 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="py-20 bg-gray-900">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-      <div class="mb-16">
-        <h2 class="text-4xl font-bold mb-4 hero-text">Let's Connect</h2>
-        <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-8"></div>
-        <p class="text-xl text-gray-400">Ready to discuss your next project or opportunity?</p>
+  <section id="contact" class="py-32 relative">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <div class="mb-20 fade-up">
+        <h2 class="text-5xl font-bold mb-6 gradient-text space-grotesk">Let's Build Something Amazing</h2>
+        <div class="w-32 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-8"></div>
+        <p class="text-xl text-gray-400">Ready to transform your infrastructure with cutting-edge AI solutions?</p>
       </div>
-      <div class="section-card rounded-2xl p-12">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <a href="mailto:sanilraj@gmail.com" class="flex items-center justify-center p-6 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl text-white hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105">
-            <i class="fas fa-envelope text-2xl mr-4"></i>
-            <div>
-              <div class="font-semibold">Email Me</div>
-              <div class="text-sm opacity-90">sanilraj@gmail.com</div>
+      <div class="glass-light rounded-3xl p-12 fade-up">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          <a href="mailto:sanilraj@gmail.com" class="contact-card flex items-center justify-center p-8 rounded-2xl text-white hover:scale-105 transition-all">
+            <i class="fas fa-envelope text-3xl mr-6"></i>
+            <div class="text-left">
+              <div class="font-bold text-xl">Email Me</div>
+              <div class="text-white/80">sanilraj@gmail.com</div>
             </div>
           </a>
-          <a href="https://linkedin.com/in/sanilraj" class="flex items-center justify-center p-6 bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl text-white hover:from-blue-700 hover:to-blue-800 transition-all duration-300 transform hover:scale-105">
-            <i class="fab fa-linkedin text-2xl mr-4"></i>
-            <div>
-              <div class="font-semibold">Connect on LinkedIn</div>
-              <div class="text-sm opacity-90">linkedin.com/in/sanilraj</div>
+          <a href="https://linkedin.com/in/sanilraj" class="contact-card flex items-center justify-center p-8 rounded-2xl text-white hover:scale-105 transition-all">
+            <i class="fab fa-linkedin text-3xl mr-6"></i>
+            <div class="text-left">
+              <div class="font-bold text-xl">Connect on LinkedIn</div>
+              <div class="text-white/80">linkedin.com/in/sanilraj</div>
             </div>
           </a>
         </div>
-        <div class="mt-8 text-gray-600">
-          <p class="text-lg">📍 Bangalore, India</p>
+        <div class="text-gray-600 text-lg">
+          <p class="flex items-center justify-center"><i class="fas fa-map-marker-alt mr-2"></i> Bangalore, India</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-800 py-8 border-t border-gray-700">
-    <div class="max-w-6xl mx-auto px-4 text-center">
-      <p class="text-gray-400">&copy; 2025 Sanil Raj. All rights reserved.</p>
+  <footer class="py-12 border-t border-white/10">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <p class="text-gray-400">&copy; 2025 Sanil Raj. Crafted with passion and precision.</p>
     </div>
   </footer>
 
   <script>
-    // Smooth scrolling for navigation links
+    // Loading Animation
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('loading').classList.add('hidden');
+      }, 1000);
+    });
+
+    // Particle System
+    function createParticles() {
+      const particles = document.getElementById('particles');
+      for (let i = 0; i < 50; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.width = Math.random() * 4 + 2 + 'px';
+        particle.style.height = particle.style.width;
+        particle.style.animationDelay = Math.random() * 20 + 's';
+        particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+        particles.appendChild(particle);
+      }
+    }
+
+    // Smooth Scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
-        });
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
       });
     });
 
-    // Add scroll effect to navigation
-    window.addEventListener('scroll', () => {
-      const nav = document.querySelector('nav');
-      if (window.scrollY > 100) {
-        nav.classList.add('bg-gray-900/95');
-      } else {
-        nav.classList.remove('bg-gray-900/95');
-      }
+    // Scroll Animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-up').forEach(el => {
+      observer.observe(el);
     });
+
+    // Initialize
+    createParticles();
   </script>
 </body>
 </html> 

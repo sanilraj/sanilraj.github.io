@@ -5,97 +5,119 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sanil Raj | Engineering Manager & GenAI Architect</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
-<body class="min-h-screen flex flex-col bg-gradient-to-br from-primary-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-primary-900 animate-gradient-slow">
-  <header role="banner" class="bg-white/95 dark:bg-gray-800/95 shadow-lg sticky top-0 z-50 backdrop-blur-sm border-b border-gray-200/50 dark:border-gray-700/30">
-    <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
-      <a href="/" class="text-xl font-bold bg-gradient-to-r from-primary-600 to-purple-600 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300">Sanil Raj</a>
-      <div class="hidden md:flex space-x-5">
-        <a href="#summary" class="nav-link text-sm hover:text-primary-600 dark:hover:text-primary-400">Summary</a>
-        <a href="#skills" class="nav-link text-sm hover:text-primary-600 dark:hover:text-primary-400">Skills</a>
-        <a href="#experience" class="nav-link text-sm hover:text-primary-600 dark:hover:text-primary-400">Experience</a>
-        <a href="#projects" class="nav-link text-sm hover:text-primary-600 dark:hover:text-primary-400">Projects</a>
-        <a href="#contact" class="nav-link text-sm hover:text-primary-600 dark:hover:text-primary-400">Contact</a>
+<body class="bg-gradient-to-br from-blue-50 via-white to-purple-100 min-h-screen">
+  <div class="flex min-h-screen">
+    <!-- Sidebar -->
+    <aside class="w-64 bg-white/90 shadow-lg border-r border-gray-200 sticky top-0 flex flex-col justify-between py-8 px-6 min-h-screen">
+      <div>
+        <div class="flex flex-col items-center mb-8">
+          <img src="assets/image/sanil-profile.jpeg" alt="Sanil Raj" class="w-28 h-28 rounded-full border-4 border-blue-500 shadow-lg object-cover mb-4">
+          <h1 class="text-2xl font-bold text-blue-700">Sanil Raj</h1>
+          <p class="text-sm text-gray-500 text-center">Engineering Manager & GenAI Architect</p>
+        </div>
+        <nav class="flex flex-col space-y-3">
+          <a href="#summary" class="flex items-center px-3 py-2 rounded-lg hover:bg-blue-100 text-blue-700 font-medium transition"><i class="fa fa-user-circle mr-2"></i> Summary</a>
+          <a href="#skills" class="flex items-center px-3 py-2 rounded-lg hover:bg-blue-100 text-blue-700 font-medium transition"><i class="fa fa-tools mr-2"></i> Skills</a>
+          <a href="#experience" class="flex items-center px-3 py-2 rounded-lg hover:bg-blue-100 text-blue-700 font-medium transition"><i class="fa fa-briefcase mr-2"></i> Experience</a>
+          <a href="#projects" class="flex items-center px-3 py-2 rounded-lg hover:bg-blue-100 text-blue-700 font-medium transition"><i class="fa fa-code-branch mr-2"></i> Projects</a>
+          <a href="#contact" class="flex items-center px-3 py-2 rounded-lg hover:bg-blue-100 text-blue-700 font-medium transition"><i class="fa fa-envelope mr-2"></i> Contact</a>
+        </nav>
       </div>
-    </nav>
-  </header>
-
-  <main class="flex-grow px-4 py-8 md:py-12">
-    <section class="text-center space-y-6">
-      <img src="assets/image/sanil-profile.jpeg" alt="Sanil Raj" class="w-40 h-40 mx-auto rounded-full border-4 border-primary-600 shadow-lg object-cover">
-      <h1 class="text-4xl md:text-6xl font-extrabold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">Sanil Raj</h1>
-      <p class="text-xl text-gray-600 dark:text-gray-400">Engineering Manager & Technical Architect @Concierto.cloud</p>
-      <p class="text-lg text-gray-600 dark:text-gray-400">Specializing in GenAI-driven Infrastructure & Automation Solutions</p>
-      <p class="text-md text-gray-600 dark:text-gray-400">Bangalore, India • <a href="mailto:sanilraj@gmail.com" class="text-blue-600">sanilraj@gmail.com</a></p>
-    </section>
-
-    <section id="summary" class="mt-12 space-y-4">
-      <h2 class="text-2xl font-bold text-gray-900 dark:text-white"><i class="fas fa-user-circle mr-2"></i>Profile Summary</h2>
-      <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
-        Seasoned professional with over 16 years of experience in IT, specializing in designing and leading the development of advanced IT infrastructure and GenAI-driven management solutions. Skilled in transforming complex requirements into scalable, efficient, and high-performing products for both cloud and on-premise environments. Proven track record of collaborating with product management teams to deliver automation and agentic AI-driven solutions that enhance IT operations.
-      </p>
-    </section>
-
-    <section id="skills" class="mt-12 space-y-4">
-      <h2 class="text-2xl font-bold text-gray-900 dark:text-white"><i class="fas fa-tools mr-2"></i>Technical Skills</h2>
-      <ul class="list-disc ml-6 text-gray-600 dark:text-gray-400 space-y-2">
-        <li><strong>GenAI:</strong> CrewAI, LangChain, LangGraph, AWS Bedrock, Neo4j, ChromaDB, N8N AI Agents</li>
-        <li><strong>Cloud Platforms:</strong> AWS, Azure, GCP</li>
-        <li><strong>Automation & DevOps:</strong> Ansible, Terraform, AWX, Node-RED, Azure DevOps, Shell Scripting</li>
-        <li><strong>Monitoring & Security:</strong> Prometheus, Grafana, ELK, Prowler (CIS), Patch Management</li>
-        <li><strong>Other Tech:</strong> Kubernetes, Docker, Kafka, Git, RedHat/SuSE Linux, VMware, Windows</li>
-      </ul>
-    </section>
-
-    <section id="experience" class="mt-12 space-y-4">
-      <h2 class="text-2xl font-bold text-gray-900 dark:text-white"><i class="fas fa-briefcase mr-2"></i>Experience</h2>
-      <div class="space-y-6">
-        <div>
-          <h3 class="text-xl font-semibold">Engineering Manager & Technical Architect</h3>
-          <p class="text-gray-600 dark:text-gray-400">Trianz Digital Consulting Pvt. Ltd. • May 2023 – Present • Bangalore</p>
-          <ul class="list-disc ml-6 text-gray-600 dark:text-gray-400">
-            <li>Leading the architecture and design of GenAI-powered automation tools and hybrid infrastructure solutions.</li>
-            <li>Implemented CIS-based compliance automation and GenAI use cases such as auto-resolution, RAG-based help bots, and RCA flows using Neo4j + LLMs.</li>
-            <li>Worked with Kafka, AWS SSM, Node-RED, and Terraform for lifecycle management and provisioning automation.</li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="text-xl font-semibold">IT Infrastructure Architect</h3>
-          <p class="text-gray-600 dark:text-gray-400">Kyndryl (formerly IBM India) • Sep 2014 – May 2023 • Bangalore</p>
-          <ul class="list-disc ml-6 text-gray-600 dark:text-gray-400">
-            <li>Designed scalable and highly available infrastructure management solutions for enterprise environments.</li>
-            <li>Integrated DevOps practices and automation for improved delivery and monitoring workflows.</li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="text-xl font-semibold">IT Operations Team Lead</h3>
-          <p class="text-gray-600 dark:text-gray-400">Accenture • Sep 2008 – Jun 2014 • Bangalore</p>
-          <ul class="list-disc ml-6 text-gray-600 dark:text-gray-400">
-            <li>Led Linux/VMware infrastructure operations and developed scripts to automate monitoring and maintenance tasks.</li>
-          </ul>
-        </div>
+      <div class="flex flex-col items-center space-y-2 mt-8">
+        <a href="mailto:sanilraj@gmail.com" class="text-blue-600 hover:text-blue-800"><i class="fa fa-envelope fa-lg"></i></a>
+        <a href="https://linkedin.com/in/sanilraj" class="text-blue-600 hover:text-blue-800"><i class="fab fa-linkedin fa-lg"></i></a>
       </div>
-    </section>
-
-    <section id="projects" class="mt-12 space-y-4">
-      <h2 class="text-2xl font-bold text-gray-900 dark:text-white"><i class="fas fa-code-branch mr-2"></i>Key Projects</h2>
-      <ul class="list-disc ml-6 text-gray-600 dark:text-gray-400 space-y-2">
-        <li><strong>GenAI Incident Management:</strong> Incident Auto-Resolution, RAG-based assistants, Neo4j + LangChain-based RCA graphs</li>
-        <li><strong>Hybrid Cloud Patch Management:</strong> Reduced manual efforts by 40% with multi-cloud support</li>
-        <li><strong>Security & Compliance Automation:</strong> CIS benchmark enforcement using Prowler & RedHat tools</li>
-        <li><strong>Cloud Provisioning Catalog:</strong> Terraform + AWS SSM + AWX-driven catalog for self-service deployment</li>
-        <li><strong>Lifecycle Automation:</strong> Server Build/Decommissioning and automated remediation reducing MTTR by 45%</li>
-      </ul>
-    </section>
-
-    <section id="contact" class="mt-12 space-y-4">
-      <h2 class="text-2xl font-bold text-gray-900 dark:text-white"><i class="fas fa-envelope mr-2"></i>Contact</h2>
-      <p class="text-gray-600 dark:text-gray-400">📧 <a href="mailto:sanilraj@gmail.com" class="text-blue-600">sanilraj@gmail.com</a> &nbsp; | &nbsp; 🌐 <a href="https://linkedin.com/in/sanilraj" class="text-blue-600">linkedin.com/in/sanilraj</a></p>
-    </section>
-  </main>
-
-  <footer class="mt-auto text-center py-6 border-t dark:border-gray-700 text-gray-500 dark:text-gray-400">
-    <p>&copy; 2025 Sanil Raj. All rights reserved.</p>
-  </footer>
+    </aside>
+    <!-- Main Content -->
+    <main class="flex-1 p-8 md:p-16 bg-transparent">
+      <!-- Hero Section -->
+      <section class="bg-white/90 rounded-3xl shadow-xl p-10 mb-10 flex flex-col items-center text-center">
+        <h2 class="text-4xl md:text-5xl font-extrabold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">Sanil Raj</h2>
+        <p class="text-lg text-gray-700 mb-1">Engineering Manager & Technical Architect @Concierto.cloud</p>
+        <p class="text-md text-gray-500 mb-2">Specializing in GenAI-driven Infrastructure & Automation Solutions</p>
+        <p class="text-sm text-gray-400">Bangalore, India • <a href="mailto:sanilraj@gmail.com" class="text-blue-600 underline">sanilraj@gmail.com</a></p>
+      </section>
+      <!-- Profile Summary -->
+      <section id="summary" class="mb-10">
+        <div class="bg-white rounded-2xl shadow-lg p-8">
+          <h2 class="text-2xl font-bold text-blue-800 mb-4 flex items-center"><i class="fa fa-user-circle mr-2"></i>Profile Summary</h2>
+          <p class="text-gray-700 leading-relaxed">
+            Seasoned professional with over 16 years of experience in IT, specializing in designing and leading the development of advanced IT infrastructure and GenAI-driven management solutions. Skilled in transforming complex requirements into scalable, efficient, and high-performing products for both cloud and on-premise environments. Proven track record of collaborating with product management teams to deliver automation and agentic AI-driven solutions that enhance IT operations.
+          </p>
+        </div>
+      </section>
+      <!-- Skills -->
+      <section id="skills" class="mb-10">
+        <div class="bg-white rounded-2xl shadow-lg p-8">
+          <h2 class="text-2xl font-bold text-blue-800 mb-4 flex items-center"><i class="fa fa-tools mr-2"></i>Technical Skills</h2>
+          <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-700">
+            <li><span class="font-semibold text-blue-700">GenAI:</span> CrewAI, LangChain, LangGraph, AWS Bedrock, Neo4j, ChromaDB, N8N AI Agents</li>
+            <li><span class="font-semibold text-blue-700">Cloud Platforms:</span> AWS, Azure, GCP</li>
+            <li><span class="font-semibold text-blue-700">Automation & DevOps:</span> Ansible, Terraform, AWX, Node-RED, Azure DevOps, Shell Scripting</li>
+            <li><span class="font-semibold text-blue-700">Monitoring & Security:</span> Prometheus, Grafana, ELK, Prowler (CIS), Patch Management</li>
+            <li><span class="font-semibold text-blue-700">Other Tech:</span> Kubernetes, Docker, Kafka, Git, RedHat/SuSE Linux, VMware, Windows</li>
+          </ul>
+        </div>
+      </section>
+      <!-- Experience -->
+      <section id="experience" class="mb-10">
+        <div class="bg-white rounded-2xl shadow-lg p-8">
+          <h2 class="text-2xl font-bold text-blue-800 mb-4 flex items-center"><i class="fa fa-briefcase mr-2"></i>Experience</h2>
+          <div class="space-y-6">
+            <div>
+              <h3 class="text-xl font-semibold text-purple-700">Engineering Manager & Technical Architect</h3>
+              <p class="text-gray-500">Trianz Digital Consulting Pvt. Ltd. • May 2023 – Present • Bangalore</p>
+              <ul class="list-disc ml-6 text-gray-700">
+                <li>Leading the architecture and design of GenAI-powered automation tools and hybrid infrastructure solutions.</li>
+                <li>Implemented CIS-based compliance automation and GenAI use cases such as auto-resolution, RAG-based help bots, and RCA flows using Neo4j + LLMs.</li>
+                <li>Worked with Kafka, AWS SSM, Node-RED, and Terraform for lifecycle management and provisioning automation.</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-purple-700">IT Infrastructure Architect</h3>
+              <p class="text-gray-500">Kyndryl (formerly IBM India) • Sep 2014 – May 2023 • Bangalore</p>
+              <ul class="list-disc ml-6 text-gray-700">
+                <li>Designed scalable and highly available infrastructure management solutions for enterprise environments.</li>
+                <li>Integrated DevOps practices and automation for improved delivery and monitoring workflows.</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-purple-700">IT Operations Team Lead</h3>
+              <p class="text-gray-500">Accenture • Sep 2008 – Jun 2014 • Bangalore</p>
+              <ul class="list-disc ml-6 text-gray-700">
+                <li>Led Linux/VMware infrastructure operations and developed scripts to automate monitoring and maintenance tasks.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Projects -->
+      <section id="projects" class="mb-10">
+        <div class="bg-white rounded-2xl shadow-lg p-8">
+          <h2 class="text-2xl font-bold text-blue-800 mb-4 flex items-center"><i class="fa fa-code-branch mr-2"></i>Key Projects</h2>
+          <ul class="list-disc ml-6 text-gray-700 space-y-2">
+            <li><span class="font-semibold text-blue-700">GenAI Incident Management:</span> Incident Auto-Resolution, RAG-based assistants, Neo4j + LangChain-based RCA graphs</li>
+            <li><span class="font-semibold text-blue-700">Hybrid Cloud Patch Management:</span> Reduced manual efforts by 40% with multi-cloud support</li>
+            <li><span class="font-semibold text-blue-700">Security & Compliance Automation:</span> CIS benchmark enforcement using Prowler & RedHat tools</li>
+            <li><span class="font-semibold text-blue-700">Cloud Provisioning Catalog:</span> Terraform + AWS SSM + AWX-driven catalog for self-service deployment</li>
+            <li><span class="font-semibold text-blue-700">Lifecycle Automation:</span> Server Build/Decommissioning and automated remediation reducing MTTR by 45%</li>
+          </ul>
+        </div>
+      </section>
+      <!-- Contact -->
+      <section id="contact" class="mb-10">
+        <div class="bg-white rounded-2xl shadow-lg p-8 text-center">
+          <h2 class="text-2xl font-bold text-blue-800 mb-4 flex items-center justify-center"><i class="fa fa-envelope mr-2"></i>Contact</h2>
+          <p class="text-gray-700">📧 <a href="mailto:sanilraj@gmail.com" class="text-blue-600 underline">sanilraj@gmail.com</a></p>
+          <p class="text-gray-700">🌐 <a href="https://linkedin.com/in/sanilraj" class="text-blue-600 underline">linkedin.com/in/sanilraj</a></p>
+        </div>
+      </section>
+      <footer class="text-center py-6 text-gray-400">
+        <p>&copy; 2025 Sanil Raj. All rights reserved.</p>
+      </footer>
+    </main>
+  </div>
 </body>
 </html> 

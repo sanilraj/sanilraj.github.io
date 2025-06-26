@@ -6,21 +6,22 @@
   <title>Sanil Raj | Engineering Manager & GenAI Architect</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-      --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      --primary-color: #e4545b;
+      --primary-gradient: linear-gradient(135deg, #e4545b 0%, #b93548 100%);
+      --secondary-gradient: linear-gradient(135deg, #ff9a9e 0%, #e4545b 100%);
+      --accent-gradient: linear-gradient(135deg, #e4545b 0%, #ffbd69 100%);
       --dark-gradient: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 100%);
     }
     
     * {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Raleway', sans-serif;
     }
-    
+
     .space-grotesk {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: 'Raleway', sans-serif;
     }
     
     /* Animated Background */
@@ -119,9 +120,8 @@
     
     /* Navigation */
     .nav-blur {
-      background: rgba(10, 10, 10, 0.8);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      background: var(--primary-color);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
     
     .nav-link {
@@ -160,7 +160,7 @@
       height: 200px;
       border-radius: 50%;
       border: 4px solid transparent;
-      background: var(--primary-gradient);
+      background: var(--primary-color);
       padding: 4px;
       animation: pulse 3s ease-in-out infinite;
     }
@@ -281,7 +281,7 @@
     
     /* Contact Section */
     .contact-card {
-      background: var(--primary-gradient);
+      background: var(--primary-color);
       transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
@@ -321,7 +321,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: #0a0a0a;
+      background: var(--primary-color);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -337,8 +337,8 @@
     .loader {
       width: 50px;
       height: 50px;
-      border: 3px solid rgba(102, 126, 234, 0.3);
-      border-top: 3px solid #667eea;
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      border-top: 3px solid #fff;
       border-radius: 50%;
       animation: spin 1s linear infinite;
     }
@@ -385,12 +385,12 @@
       <div class="flex justify-between items-center">
         <div class="text-2xl font-bold gradient-text space-grotesk">Sanil Raj</div>
         <div class="hidden md:flex space-x-8">
-          <a href="#home" class="nav-link px-4 py-2 rounded-lg text-gray-300 hover:text-white transition-all">Home</a>
-          <a href="#about" class="nav-link px-4 py-2 rounded-lg text-gray-300 hover:text-white transition-all">About</a>
-          <a href="#skills" class="nav-link px-4 py-2 rounded-lg text-gray-300 hover:text-white transition-all">Skills</a>
-          <a href="#experience" class="nav-link px-4 py-2 rounded-lg text-gray-300 hover:text-white transition-all">Experience</a>
-          <a href="#projects" class="nav-link px-4 py-2 rounded-lg text-gray-300 hover:text-white transition-all">Projects</a>
-          <a href="#contact" class="nav-link px-4 py-2 rounded-lg text-gray-300 hover:text-white transition-all">Contact</a>
+          <a href="#home" class="nav-link px-4 py-2 rounded-lg text-white">Home</a>
+          <a href="#about" class="nav-link px-4 py-2 rounded-lg text-white">About</a>
+          <a href="#skills" class="nav-link px-4 py-2 rounded-lg text-white">Skills</a>
+          <a href="#experience" class="nav-link px-4 py-2 rounded-lg text-white">Experience</a>
+          <a href="#projects" class="nav-link px-4 py-2 rounded-lg text-white">Projects</a>
+          <a href="#contact" class="nav-link px-4 py-2 rounded-lg text-white">Contact</a>
         </div>
         <div class="flex space-x-4">
           <a href="mailto:sanilraj@gmail.com" class="text-gray-300 hover:text-white transition-colors text-xl">

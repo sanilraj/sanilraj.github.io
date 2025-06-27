@@ -114,7 +114,7 @@
       width: 200px;
       height: 200px;
       border-radius: 50%;
-      border: 2px solid var(--accent-color);
+      border: 6px solid var(--accent-color);
     }
     
     .profile-image img {
@@ -226,7 +226,7 @@
       border: 4px solid #fff;
     }
     
-    /* Contact Section */
+    /* Contact Button */
     .contact-card {
       background: var(--accent-color);
       transition: all 0.15s ease;
@@ -331,22 +331,13 @@
         <button id="menu-toggle" class="md:hidden text-gray-900 text-2xl">
           <i class="fas fa-bars"></i>
         </button>
-        <div class="hidden md:flex space-x-6 text-gray-900">
+        <div id="menu-links" class="hidden md:flex flex-col md:flex-row md:space-x-6 space-y-2 md:space-y-0 text-gray-900 mt-4 md:mt-0">
           <a href="#home" class="nav-link">Home</a>
           <a href="#about" class="nav-link">About</a>
           <a href="#skills" class="nav-link">Skills</a>
           <a href="#experience" class="nav-link">Experience</a>
           <a href="#projects" class="nav-link">Projects</a>
-          <a href="#contact" class="nav-link">Contact</a>
         </div>
-      </div>
-      <div id="mobile-menu" class="md:hidden hidden mt-4 flex-col space-y-2 text-gray-900">
-        <a href="#home" class="nav-link">Home</a>
-        <a href="#about" class="nav-link">About</a>
-        <a href="#skills" class="nav-link">Skills</a>
-        <a href="#experience" class="nav-link">Experience</a>
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="#contact" class="nav-link">Contact</a>
       </div>
     </div>
   </nav>
@@ -365,7 +356,7 @@
         Transforming complex requirements into scalable, AI-driven infrastructure solutions
       </p>
       <div class="flex flex-col sm:flex-row gap-6 justify-center">
-        <a href="#contact" class="contact-card px-8 py-4 rounded-full text-white font-semibold text-lg hover:scale-105 transition-all">
+        <a href="mailto:sanilraj@gmail.com" class="contact-card px-8 py-4 rounded-full text-white font-semibold text-lg hover:scale-105 transition-all">
           Let's Connect
         </a>
         <a href="#projects" class="glass px-8 py-4 rounded-full text-white font-semibold text-lg hover:scale-105 transition-all border border-gray-300">
@@ -680,22 +671,52 @@
       </div>
     </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="py-32 bg-gray-50 relative">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <div class="mb-20 fade-up">
-        <h2 class="text-5xl font-bold mb-6 gradient-text space-grotesk">Let's Build Something Amazing</h2>
-        <div class="w-32 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-8"></div>
-        <p class="text-xl text-gray-600">Ready to transform your infrastructure with cutting-edge AI solutions?</p>
+  <!-- Leadership Highlights -->
+  <section id="leadership" class="py-32 bg-gray-50 relative">
+    <div class="max-w-6xl mx-auto px-6 space-y-16">
+      <div class="fade-up">
+        <h2 class="text-4xl font-bold mb-4 gradient-text space-grotesk">Innovation & Thought Leadership</h2>
+        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+          <li>Researched and prototyped LLM-based agents for incident analysis, knowledge retrieval, and event correlation.</li>
+          <li>Pioneered low-code/no-code workflows to democratize access to automation for non-technical users.</li>
+          <li>Defined reusable provisioning blueprints for consistent hybrid-cloud deployments.</li>
+          <li>Conducted GenAI PoCs to explore ITSM enhancements like ticket summarization and incident clustering.</li>
+          <li>Created tool evaluation frameworks to compare open-source alternatives across automation, compliance, and orchestration.</li>
+          <li>Launched internal developer enablement tracks to promote IaC, cloud-native, and API-first practices.</li>
+        </ul>
       </div>
-      <div class="glass-light rounded-3xl p-12 fade-up">
-        <div class="space-y-6 text-center">
-            <p><a href="mailto:sanilraj@gmail.com" class="text-lg text-blue-900 hover:underline">✉️ sanilraj@gmail.com</a></p>
-            <p class="text-lg text-gray-800">📞 +91 96119 74747</p>
-            <p><a href="https://linkedin.com/in/sanilraj" class="text-lg text-blue-900 hover:underline"><i class="fab fa-linkedin mr-2"></i>LinkedIn</a></p>
-            <p class="text-gray-700">📍 Bangalore, India</p>
-        </div>
-        </div>
+      <div class="fade-up">
+        <h2 class="text-4xl font-bold mb-4 gradient-text space-grotesk">Leadership & Strategy</h2>
+        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+          <li>Managed and mentored a team of 20 automation engineers across roadmap execution and performance.</li>
+          <li>Defined infrastructure automation strategy aligned with business needs in coordination with Product, QA, and UX.</li>
+        </ul>
+      </div>
+      <div class="fade-up">
+        <h2 class="text-4xl font-bold mb-4 gradient-text space-grotesk">Architecture & Delivery</h2>
+        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+          <li>Designed scalable, multi-tenant infrastructure architecture with secure provisioning and role isolation.</li>
+        </ul>
+      </div>
+      <div class="fade-up">
+        <h2 class="text-4xl font-bold mb-4 gradient-text space-grotesk">Cost & Efficiency</h2>
+        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+          <li>Reduced operational overhead through automation of patching, remediation, and compliance tasks.</li>
+        </ul>
+      </div>
+      <div class="fade-up">
+        <h2 class="text-4xl font-bold mb-4 gradient-text space-grotesk">Security & Compliance</h2>
+        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+          <li>Integrated security benchmarks (CIS, PCI-DSS) into CI/CD and automation flows.</li>
+          <li>Developed RBAC-based access control for multi-tenant data and execution isolation.</li>
+        </ul>
+      </div>
+      <div class="fade-up">
+        <h2 class="text-4xl font-bold mb-4 gradient-text space-grotesk">Collaboration & Enablement</h2>
+        <ul class="list-disc pl-6 space-y-2 text-gray-700">
+          <li>Liaised with Product, Sales, and Channel teams to align technical outcomes with customer requirements.</li>
+          <li>Conducted internal workshops on Terraform, Ansible, and SRE principles to upskill engineering teams.</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -769,10 +790,17 @@ const tagline = "Engineering Manager & Technical Architect";
 
     // Mobile nav toggle
     const menuToggle = document.getElementById('menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    if (menuToggle && mobileMenu) {
+    const menuLinks = document.getElementById('menu-links');
+    if (menuToggle && menuLinks) {
       menuToggle.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
+        menuLinks.classList.toggle('hidden');
+      });
+      menuLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          if (window.innerWidth < 768) {
+            menuLinks.classList.add('hidden');
+          }
+        });
       });
     }
 

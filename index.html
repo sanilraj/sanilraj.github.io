@@ -20,6 +20,11 @@
       font-family: 'Raleway', Tahoma, Geneva, sans-serif;
     }
 
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
     .space-grotesk {
       font-family: 'Raleway', Tahoma, Geneva, sans-serif;
     }
@@ -233,27 +238,22 @@
       border: 4px solid #fff;
     }
     
-    /* Contact Button */
-    .contact-card {
-      background: var(--accent-color);
-      transition: all 0.15s ease;
-      position: relative;
-      overflow: hidden;
+    /* Common button class */
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      margin-right: 10px;
+      font-weight: bold;
+      border-radius: 5px;
+      text-decoration: none;
+      color: #fff;
+      background-color: #e4545b;
+      border: none;
+      transition: background-color 0.3s ease;
     }
-    
-    .contact-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-      transition: left 0.15s;
-    }
-    
-    .contact-card:hover::before {
-      left: 100%;
+
+    .button:hover {
+      background-color: #c13c48;
     }
     
     /* Scroll Animations */
@@ -357,12 +357,8 @@
         Transforming complex requirements into scalable, AI-driven infrastructure solutions
       </p>
       <div class="flex flex-col sm:flex-row gap-6 justify-center">
-        <a href="#contact" class="contact-card px-8 py-4 rounded-full text-white font-semibold text-lg hover:scale-105 transition-all">
-          Let's Connect
-        </a>
-        <a href="#projects" class="glass px-8 py-4 rounded-full text-white font-semibold text-lg hover:scale-105 transition-all border border-gray-300">
-          View My Work
-        </a>
+        <a href="#contact" class="button">Let's Connect</a>
+        <a href="#projects" class="button">View My Work</a>
       </div>
     </div>
   </section>

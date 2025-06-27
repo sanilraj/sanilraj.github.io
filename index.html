@@ -6,27 +6,33 @@
   <title>Sanil Raj | Engineering Manager & Technical Architect</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --accent-color: #1f3a93;
-      --primary-gradient: linear-gradient(135deg, #1f3a93 0%, #162c6a 100%);
-      --secondary-gradient: linear-gradient(135deg, #6b7280 0%, #1f3a93 100%);
-      --accent-gradient: linear-gradient(135deg, #1f3a93 0%, #4b5563 100%);
-      --dark-gradient: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 100%);
+      --accent-color: #e4545b;
+      --primary-gradient: linear-gradient(135deg, #e4545b 0%, #000 100%);
+      --secondary-gradient: linear-gradient(135deg, #bbbbbb 0%, #e4545b 100%);
+      --accent-gradient: linear-gradient(135deg, #e4545b 0%, #333 100%);
+      --dark-gradient: linear-gradient(135deg, #000 0%, #333 100%);
     }
     
     * {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Raleway', Tahoma, Geneva, sans-serif;
     }
 
     .space-grotesk {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Raleway', Tahoma, Geneva, sans-serif;
     }
 
     h1, h2, h3, h4, h5, h6 {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Raleway', Tahoma, Geneva, sans-serif;
     }
+
+    /* Color overrides to match theme */
+    .text-gray-900 { color: #000 !important; }
+    .text-gray-800 { color: #333 !important; }
+    .text-gray-700 { color: #444444 !important; }
+    .text-gray-600 { color: #777777 !important; }
     /* Removed animated background and particle effects for a cleaner look */
     
     /* Glassmorphism */
@@ -314,7 +320,7 @@
     }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-900 overflow-x-hidden">
+<body class="overflow-x-hidden" style="background:#f5f6f8;color:#333;">
   <a href="#home" class="sr-only focus:not-sr-only absolute top-2 left-2 bg-white text-black p-2 rounded">Skip to Content</a>
   <!-- Loading Overlay -->
   <div class="loading-overlay" id="loading">
@@ -361,7 +367,7 @@
   </section>
 
   <!-- About Section -->
-  <section id="about" class="py-32 bg-gray-50 relative">
+  <section id="about" class="py-32 relative" style="background:#f3f3f3;">
     <div class="max-w-6xl mx-auto px-6">
       <div class="text-center mb-20 fade-up">
         <h2 class="text-5xl font-bold mb-6 gradient-text space-grotesk">About Me</h2>
@@ -508,7 +514,7 @@
   </section>
 
   <!-- Experience Section -->
-  <section id="experience" class="py-32 bg-gray-50 relative">
+  <section id="experience" class="py-32 relative" style="background:#f3f3f3;">
     <div class="max-w-6xl mx-auto px-6">
       <div class="text-center mb-20 fade-up">
         <h2 class="text-5xl font-bold mb-6 gradient-text space-grotesk">Professional Journey</h2>
@@ -665,7 +671,7 @@
     </section>
 
   <!-- Leadership Highlights -->
-  <section id="leadership" class="py-32 bg-gray-50 relative">
+  <section id="leadership" class="py-32 relative" style="background:#f3f3f3;">
     <div class="max-w-6xl mx-auto px-6 space-y-16">
       <div class="fade-up">
         <h2 class="text-4xl font-bold mb-4 gradient-text space-grotesk">Innovation & Thought Leadership</h2>
@@ -736,7 +742,7 @@
   </section>
 
   <!-- Footer -->
-  <footer class="py-12 border-t border-gray-300 bg-gray-900 text-gray-400">
+  <footer class="py-12 border-t border-gray-300 text-gray-400" style="background:#000;">
     <div class="max-w-6xl mx-auto px-6 text-center">
       <p class="text-gray-600">&copy; 2025 Sanil Raj. Crafted with passion and precision.</p>
     </div>

@@ -68,35 +68,14 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
-    
-    /* Navigation */
-    .nav-blur {
-      background: transparent;
+    a {
+      color: #1f4b99;
+      text-decoration: none;
     }
-    .nav-blur.scrolled {
-      background: rgba(255,255,255,0.9);
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    
-    .nav-link {
-      position: relative;
-      padding: 0.25rem 0;
+    a:hover {
+      text-decoration: underline;
     }
 
-    .nav-link::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0;
-      height: 2px;
-      background: var(--accent-color);
-      transition: width 0.15s ease;
-    }
-
-    .nav-link:hover::after {
-      width: 100%;
-    }
     
     /* Hero Section */
     .hero-container {
@@ -106,22 +85,6 @@
       padding-top: 6rem;
       padding-bottom: 6rem;
       justify-content: center;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .profile-image {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      border: 2px solid var(--accent-color);
-    }
-    
-    .profile-image img {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      object-fit: cover;
     }
     
 
@@ -324,40 +287,36 @@
   <!-- Removed animated background and particle layers for a polished appearance -->
 
   <!-- Navigation -->
-  <nav class="fixed w-full top-0 z-50 nav-blur">
-    <div class="max-w-7xl mx-auto px-6 py-4">
-      <div class="flex justify-between items-center">
-        <div class="text-2xl font-bold space-grotesk text-gray-900">Sanil Raj</div>
-        <button id="menu-toggle" class="md:hidden text-gray-900 text-2xl">
-          <i class="fas fa-bars"></i>
-        </button>
-        <div class="hidden md:flex space-x-6 text-gray-900">
-          <a href="#home" class="nav-link">Home</a>
-          <a href="#about" class="nav-link">About</a>
-          <a href="#skills" class="nav-link">Skills</a>
-          <a href="#experience" class="nav-link">Experience</a>
-          <a href="#projects" class="nav-link">Projects</a>
-          <a href="#contact" class="nav-link">Contact</a>
-        </div>
-      </div>
-      <div id="mobile-menu" class="md:hidden hidden mt-4 flex-col space-y-2 text-gray-900">
-        <a href="#home" class="nav-link">Home</a>
-        <a href="#about" class="nav-link">About</a>
-        <a href="#skills" class="nav-link">Skills</a>
-        <a href="#experience" class="nav-link">Experience</a>
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="#contact" class="nav-link">Contact</a>
-      </div>
-    </div>
-  </nav>
+<nav class="bg-white shadow-md p-4 flex justify-between items-center fixed w-full top-0 z-50">
+  <div class="text-xl font-bold">Sanil Raj</div>
+  <ul class="hidden md:flex gap-6 text-blue-700 font-medium">
+    <li><a href="#home" class="hover:underline">Home</a></li>
+    <li><a href="#about" class="hover:underline">About</a></li>
+    <li><a href="#skills" class="hover:underline">Skills</a></li>
+    <li><a href="#experience" class="hover:underline">Experience</a></li>
+    <li><a href="#projects" class="hover:underline">Projects</a></li>
+    <li><a href="#contact" class="hover:underline">Contact</a></li>
+  </ul>
+  <button id="menu-toggle" class="md:hidden text-blue-700 text-2xl">
+    <i class="fas fa-bars"></i>
+  </button>
+</nav>
+<div id="mobile-menu" class="md:hidden hidden p-4 bg-white shadow-md">
+  <ul class="flex flex-col gap-2 text-blue-700 font-medium">
+    <li><a href="#home" class="hover:underline">Home</a></li>
+    <li><a href="#about" class="hover:underline">About</a></li>
+    <li><a href="#skills" class="hover:underline">Skills</a></li>
+    <li><a href="#experience" class="hover:underline">Experience</a></li>
+    <li><a href="#projects" class="hover:underline">Projects</a></li>
+    <li><a href="#contact" class="hover:underline">Contact</a></li>
+  </ul>
+</div>
 
   <!-- Hero Section -->
   <section id="home" class="hero-container bg-white">
     <div class="text-center px-6 fade-up">
-      <div class="profile-image mx-auto mb-8">
-        <img src="assets/image/sanil-profile.jpeg" alt="Sanil Raj">
-      </div>
-      <h1 class="text-6xl md:text-8xl font-black mb-6 space-grotesk">
+    <img src="assets/image/sanil-profile.jpeg" class="rounded-full border-4 border-blue-600 w-48 h-48 mx-auto mb-8" alt="Sanil Raj">
+  <h1 class="text-6xl md:text-8xl font-black mb-6 space-grotesk">
         <span class="gradient-text">Sanil</span> <span class="gradient-text-accent">Raj</span>
       </h1>
       <p class="text-base md:text-lg font-medium mb-4 text-gray-800 font-light"><span id="tagline"></span></p>
@@ -680,27 +639,27 @@
       </div>
     </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="py-32 bg-gray-50 relative">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <div class="mb-20 fade-up">
-        <h2 class="text-5xl font-bold mb-6 gradient-text space-grotesk">Let's Build Something Amazing</h2>
-        <div class="w-32 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-8"></div>
-        <p class="text-xl text-gray-600">Ready to transform your infrastructure with cutting-edge AI solutions?</p>
+<!-- Contact Section -->
+<section id="contact" class="py-32 bg-gray-50">
+  <div class="bg-white rounded-lg shadow-md p-6 max-w-xl mx-auto text-center">
+    <h2 class="text-2xl font-bold text-blue-800 mb-4">Let's Build Something Amazing</h2>
+    <p class="text-gray-700 mb-6">Ready to transform your infrastructure with cutting-edge AI solutions?</p>
+    <div class="flex flex-col items-center gap-3 text-blue-800">
+      <div class="flex items-center gap-2">
+        <img src="assets/icons/email.svg" alt="Email" class="w-5 h-5" />
+        <a href="mailto:sanilraj@gmail.com">sanilraj@gmail.com</a>
       </div>
-      <div class="glass-light rounded-3xl p-12 fade-up">
-        <div class="space-y-6 text-center">
-            <p><a href="mailto:sanilraj@gmail.com" class="text-lg text-blue-900 hover:underline">✉️ sanilraj@gmail.com</a></p>
-            <p class="text-lg text-gray-800">📞 +91 96119 74747</p>
-            <p><a href="https://linkedin.com/in/sanilraj" class="text-lg text-blue-900 hover:underline"><i class="fab fa-linkedin mr-2"></i>LinkedIn</a></p>
-            <p class="text-gray-700">📍 Bangalore, India</p>
-        </div>
-        </div>
+      <div class="flex items-center gap-2">
+        <img src="assets/icons/linkedin.svg" alt="LinkedIn" class="w-5 h-5" />
+        <a href="https://linkedin.com/in/sanilraj" target="_blank">LinkedIn</a>
+      </div>
+      <div class="flex items-center gap-2">
+        <img src="assets/icons/location.svg" alt="Location" class="w-5 h-5" />
+        <span>Bangalore, India</span>
       </div>
     </div>
-  </section>
-
-  <!-- Footer -->
+  </div>
+</section>
   <footer class="py-12 border-t border-gray-300 bg-gray-900 text-gray-400">
     <div class="max-w-6xl mx-auto px-6 text-center">
       <p class="text-gray-600">&copy; 2025 Sanil Raj. Crafted with passion and precision.</p>
@@ -714,14 +673,6 @@
         document.getElementById('loading').classList.add('fade-out');
       }, 1000);
     });
-  const nav = document.querySelector("nav");
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 50) {
-      nav.classList.add("scrolled");
-    } else {
-      nav.classList.remove("scrolled");
-    }
-  });
 
 const tagline = "Engineering Manager & Technical Architect";
   let idx = 0;

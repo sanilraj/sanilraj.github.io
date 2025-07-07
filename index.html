@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanil Raj | Hybrid Engineering Leader – Management | Architecture | Hands-on Delivery</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Styles -->
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #3b82f6;
+            --accent-light: #60a5fa;
+            --text-primary: #0f172a;
+            --text-secondary: #64748b;
+            --text-muted: #94a3b8;
+            --surface: #ffffff;
+            --surface-alt: #f8fafc;
+            --border: #e2e8f0;
+            --gradient-primary: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            --gradient-secondary: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--surface);
+            overflow-x: hidden;
+        }
+
+        .font-mono {
+            font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--surface-alt);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent);
+            border-radius: 3px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-light);
+        }
+
+        /* Animations - improved for better performance */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px); /* Reduced from 30px */
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px); /* Reduced from -30px */
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(20px); /* Reduced from 30px */
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .animate-fade-in-left {
+            animation: fadeInLeft 0.8s ease-out forwards;
+        }
+
+        .animate-fade-in-right {
+            animation: fadeInRight 0.8s ease-out forwards;
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .animate-pulse-slow {
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        /* Utility classes */
+        .gradient-text {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            z-index: 1;
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-xl);
+            transform: translateY(-2px); /* Reduced from -4px to prevent layout shift */
+            z-index: 2;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            border: none;
+            outline: none;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: var(--surface);
+            color: var(--text-primary);
+            border: 2px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        /* Navigation */
+        .nav-blur {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .nav-link {
+            position: relative;
+            color: var(--text-secondary);
+            font-weight: 500;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--accent);
+            background: rgba(59, 130, 246, 0.1);
+        }
+
+        /* Section spacing to account for fixed navigation */
+        section {
+            scroll-margin-top: 80px; /* Accounts for fixed nav height */
+        }
+
+        /* Hero section */
+        .hero-bg {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            position: relative;
+            padding-top: 80px; /* Add top padding for fixed nav */
+        }
+
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%233b82f6' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+        }
+
+        /* Profile image */
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 4px solid var(--surface);
+            box-shadow: var(--shadow-xl);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .profile-image::before {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            bottom: -4px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .profile-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Section styling */
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            position: relative;
+            line-height: 1.2;
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            line-height: 1.6;
+        }
+
+        /* About section specific styling */
+        #about {
+            padding-top: 6rem; /* Increased top padding */
+            padding-bottom: 5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        #about .grid {
+            align-items: flex-start; /* Changed from center to start */
+            gap: 3rem; /* Increased gap */
+        }
+
+        #about .card {
+            margin-bottom: 0; /* Ensure no extra margin */
+        }
+
+        /* Skills section */
+        #skills {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Experience section */
+        #experience {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Projects section */
+        #projects {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Contact section */
+        #contact {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+            position: relative;
+            z-index: 1;
+        }
+        .skill-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .skill-item:hover {
+            border-color: var(--accent);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+
+        /* Section-specific spacing adjustments */
+        #skills {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        #experience {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        #projects {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        #contact {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .skill-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient-primary);
+            border-radius: 8px;
+            color: white;
+            font-size: 18px;
+        }
+
+        /* Experience timeline */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--gradient-primary);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-left: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -1.5rem;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            background: var(--accent);
+            border-radius: 50%;
+            border: 3px solid var(--surface);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Project cards */
+        .project-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            z-index: 1;
+            margin-bottom: 1rem; /* Add consistent bottom margin */
+        }
+
+        .project-card:hover {
+            box-shadow: var(--shadow-xl);
+            transform: translateY(-4px);
+            z-index: 2;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+        }
+
+        /* Contact section */
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 20px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .contact-item:hover {
+            border-color: var(--accent);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient-primary);
+            border-radius: 12px;
+            color: white;
+            font-size: 20px;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .profile-image {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .timeline {
+                padding-left: 1.5rem;
+            }
+            
+            .timeline-item {
+                padding-left: 1.5rem;
+            }
+            
+            /* Mobile spacing adjustments */
+            #about {
+                padding-top: 4rem;
+                padding-bottom: 4rem;
+            }
+            
+            #skills, #experience, #projects, #contact {
+                padding-top: 4rem;
+                padding-bottom: 4rem;
+            }
+            
+            .hero-bg {
+                padding-top: 60px; /* Reduced for mobile */
+            }
+            
+            section {
+                scroll-margin-top: 60px; /* Reduced for mobile */
+            }
+        }
+
+        /* Loading animation */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--surface);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 3px solid var(--border);
+            border-top: 3px solid var(--accent);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Hide loading overlay when loaded */
+        .loaded .loading-overlay {
+            opacity: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loading">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 nav-blur">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="font-bold text-xl gradient-text">
+                    Sanil Raj
+                </div>
+                <div class="hidden md:flex items-center space-x-2">
+                    <a href="#home" class="nav-link active">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#experience" class="nav-link">Experience</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+                <button class="md:hidden p-2" id="mobile-menu-btn">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            <!-- Mobile menu -->
+            <div class="md:hidden mt-4 hidden" id="mobile-menu">
+                <div class="flex flex-col space-y-2">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#experience" class="nav-link">Experience</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen hero-bg flex items-center justify-center relative">
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+            <div class="animate-fade-in-up">
+                <div class="profile-image mx-auto mb-8 animate-float">
+                    <img src="assets/image/sanil-profile.jpeg" alt="Sanil Raj - Engineering Leader">
+                </div>
+                <h1 class="text-5xl md:text-7xl font-black mb-6 leading-tight">
+                    Hi, I'm <span class="gradient-text">Sanil Raj</span>
+                </h1>
+                <p class="text-xl md:text-2xl font-medium mb-4 text-gray-600">
+                    Hybrid Engineering Leader – Management | Architecture | Hands-on Delivery
+                </p>
+                <p class="text-lg mb-8 text-gray-500 max-w-2xl mx-auto leading-relaxed">
+                    Transforming complex requirements into scalable infrastructure Management SaaS solutions
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="#contact" class="btn btn-primary">
+                        <i class="fas fa-envelope mr-2"></i>
+                        Let's Connect
+                    </a>
+                    <a href="#projects" class="btn btn-secondary">
+                        <i class="fas fa-code mr-2"></i>
+                        View My Work
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-pulse-slow">
+            <div class="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
+                <div class="w-1 h-3 bg-gray-400 rounded-full mt-2 animate-pulse"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="section-title gradient-text">About Me</h2>
+                <p class="section-subtitle">
+                    Passionate about building scalable solutions and leading high-performing engineering teams
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="animate-fade-in-left">
+                    <div class="prose prose-lg max-w-none">
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Seasoned IT leader with <strong>17 years of experience</strong> spanning infrastructure architecture, cloud automation, security compliance, and enterprise IT operations. Currently leading the development of SaaS-based applications for IT infrastructure management in multi-tenant, hybrid-cloud environments.
+                        </p>
+                        <p class="text-gray-600 mb-6 leading-relaxed">
+                            Skilled in designing scalable solutions, driving automation strategies, enabling cross-functional collaboration, and integrating GenAI to enhance operational efficiency and decision-making.
+                        </p>
+                        <div class="flex flex-wrap gap-3 mb-8">
+                            <span class="px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">Leadership</span>
+                            <span class="px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium">Cloud Architecture</span>
+                            <span class="px-4 py-2 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">DevOps</span>
+                            <span class="px-4 py-2 bg-orange-100 text-orange-800 rounded-full text-sm font-medium">SaaS Development</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="animate-fade-in-right">
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="card p-6 text-center">
+                            <div class="text-4xl font-black gradient-text mb-2">17+</div>
+                            <div class="text-gray-600 font-medium">Years Experience</div>
+                        </div>
+                        <div class="card p-6 text-center">
+                            <div class="text-4xl font-black gradient-text mb-2">50+</div>
+                            <div class="text-gray-600 font-medium">Projects Delivered</div>
+                        </div>
+                        <div class="card p-6 text-center">
+                            <div class="text-4xl font-black gradient-text mb-2">30+</div>
+                            <div class="text-gray-600 font-medium">Team Members Led</div>
+                        </div>
+                        <div class="card p-6 text-center">
+                            <div class="text-4xl font-black gradient-text mb-2">5+</div>
+                            <div class="text-gray-600 font-medium">Cloud Platforms</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="section-title gradient-text">Technical Expertise</h2>
+                <p class="section-subtitle">
+                    Comprehensive skill set spanning cloud technologies, automation, and leadership
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Cloud Platforms -->
+                <div class="skill-item animate-fade-in-up">
+                    <div class="skill-icon">
+                        <i class="fab fa-aws"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-800">AWS</h3>
+                        <p class="text-sm text-gray-600">EC2, S3, Lambda, RDS, VPC</p>
+                    </div>
+                </div>
+                
+                <div class="skill-item animate-fade-in-up">
+                    <div class="skill-icon">
+                        <i class="fab fa-microsoft"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-800">Azure</h3>
+                        <p class="text-sm text-gray-600">Virtual Machines, Storage, Functions</p>
+                    </div>
+                </div>
+                
+                <div class="skill-item animate-fade-in-up">
+                    <div class="skill-icon">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-800">Google Cloud</h3>
+                        <p class="text-sm text-gray-600">Compute Engine, Cloud Storage</p>
+                    </div>
+                </div>
+                
+                <!-- DevOps & Automation -->
+                <div class="skill-item animate-fade-in-up">
+                    <div class="skill-icon">
+                        <i class="fab fa-docker"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-800">Docker</h3>
+                        <p class="text-sm text-gray-600">Containerization & Orchestration</p>
+                    </div>
+                </div>
+                
+                <div class="skill-item animate-fade-in-up">
+                    <div class="skill-icon">
+                        <i class="fas fa-dharmachakra"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-800">Kubernetes</h3>
+                        <p class="text-sm text-gray-600">Container Orchestration</p>
+                    </div>
+                </div>
+                
+                <div class="skill-item animate-fade-in-up">
+                    <div class="skill-icon">
+                        <i class="fas fa-code-branch"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-800">CI/CD</h3>
+                        <p class="text-sm text-gray-600">Jenkins, GitLab, GitHub Actions</p>
+                    </div>
+                </div>
+                
+                <!-- Infrastructure as Code -->
+                <div class="skill-item animate-fade-in-up">
+                    <div class="skill-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-800">Terraform</h3>
+                        <p class="text-sm text-gray-600">Infrastructure as Code</p>
+                    </div>
+                </div>
+                
+                <div class="skill-item animate-fade-in-up">
+                    <div class="skill-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-800">Ansible</h3>
+                        <p class="text-sm text-gray-600">Configuration Management</p>
+                    </div>
+                </div>
+                
+                <div class="skill-item animate-fade-in-up">
+                    <div class="skill-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-800">CloudFormation</h3>
+                        <p class="text-sm text-gray-600">AWS Infrastructure Automation</p>
+                    </div>
+                </div>
+                
+                <!-- Programming & Scripting -->
+                <div class="skill-item animate-fade-in-up">
+                    <div class="skill-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-800">Python</h3>
+                        <p class="text-sm text-gray-600">Automation & Scripting</p>
+                    </div>
+                </div>
+                
+                <div class="skill-item animate-fade-in-up">
+                    <div class="skill-icon">
+                        <i class="fas fa-terminal"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-800">Bash/Shell</h3>
+                        <p class="text-sm text-gray-600">System Administration</p>
+                    </div>
+                </div>
+                
+                <div class="skill-item animate-fade-in-up">
+                    <div class="skill-icon">
+                        <i class="fab fa-js-square"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-800">JavaScript</h3>
+                        <p class="text-sm text-gray-600">Full-stack Development</p>
+                    </div>
+                </div>
+                
+                <!-- Monitoring & Security -->
+                <div class="skill-item animate-fade-in-up">
+                    <div class="skill-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-800">Monitoring</h3>
+                        <p class="text-sm text-gray-600">Prometheus, Grafana, ELK</p>
+                    </div>
+                </div>
+                
+                <div class="skill-item animate-fade-in-up">
+                    <div class="skill-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-800">Security</h3>
+                        <p class="text-sm text-gray-600">Compliance, IAM, Encryption</p>
+                    </div>
+                </div>
+                
+                <div class="skill-item animate-fade-in-up">
+                    <div class="skill-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-800">AI/ML Integration</h3>
+                        <p class="text-sm text-gray-600">GenAI, Automation Enhancement</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="section-title gradient-text">Professional Experience</h2>
+                <p class="section-subtitle">
+                    17+ years of leadership in infrastructure, cloud architecture, and team management
+                </p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item animate-fade-in-up">
+                    <div class="card p-8">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">Engineering Manager & Technical Architect</h3>
+                                <p class="text-lg text-blue-600 font-medium">Trianz Digital Consulting Pvt. Ltd. • Bangalore</p>
+                            </div>
+                            <div class="text-gray-500 font-medium">May 2023 – Present</div>
+                        </div>
+                        <ul class="text-gray-600 space-y-2">
+                            <li>• Designed and deployed microservices for SaaS-based applications, implementing multi-tenant principles and integrating seamlessly with platform-wide standards like Kubernetes and API gateways</li>
+                            <li>• Defined secure, observable patterns using OAuth2/JWT authentication, centralized secret management (Vault, AWS Secrets Manager), and integrated monitoring with Prometheus and Grafana</li>
+                            <li>• Architected asynchronous microservice communication via Kafka, implemented robust RBAC controls, and streamlined CI/CD pipelines using Azure DevOps</li>
+                            <li>• Spearheaded the implementation of new microservices on a SaaS platform, ensuring seamless integration with shared infrastructure, authentication mechanisms, and CI/CD environments</li>
+                            <li>• Spearheading infrastructure automation for applications built on a SaaS platform, focusing on managing large-scale hybrid-cloud and multi-tenant environments</li>
+                            <li>• Engineered hybrid-cloud provisioning and lifecycle automation using Terraform, AWS SSM, AWX, and Ansible, reducing manual overhead and improving maintainability</li>
+                            <li>• Created catalog-based provisioning and orchestration workflows using Python and AWS Systems Manager, streamlining deployment and standardizing infrastructure delivery</li>
+                            <li>• Integrated automation-based auto-resolution and compliance workflows (CIS benchmarks, Prowler) to cut MTTR and improve audit readiness</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item animate-fade-in-up">
+                    <div class="card p-8">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">IT Infrastructure Architect</h3>
+                                <p class="text-lg text-blue-600 font-medium">Kyndryl (formerly IBM India) • Bangalore</p>
+                            </div>
+                            <div class="text-gray-500 font-medium">Sep 2014 – May 2023</div>
+                        </div>
+                        <ul class="text-gray-600 space-y-2">
+                            <li>• Designed and implemented infrastructure solutions aligned with enterprise architecture strategies</li>
+                            <li>• Delivered solutions for complex IT infrastructure problems across hybrid environments</li>
+                            <li>• Participated in SRE enablement by introducing automation and process optimization techniques</li>
+                            <li>• Evaluated and implemented new tools and technologies to enhance infrastructure automation and stability</li>
+                            <li>• Conducted architecture reviews and maintained documentation for infrastructure standards and governance</li>
+                            <li>• Managed high-visibility projects with minimal oversight, delivering on time and within budget</li>
+                            <li>• Mentored junior engineers and supported knowledge sharing across technical teams</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item animate-fade-in-up">
+                    <div class="card p-8">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-800 mb-2">IT Operations Team Lead</h3>
+                                <p class="text-lg text-blue-600 font-medium">Accenture • Bangalore</p>
+                            </div>
+                            <div class="text-gray-500 font-medium">Sep 2008 – Jun 2014</div>
+                        </div>
+                        <ul class="text-gray-600 space-y-2">
+                            <li>• Ensured execution of infrastructure design methodologies and best practices</li>
+                            <li>• Automated repetitive tasks to improve system reliability and reduce operational overhead</li>
+                            <li>• Provided technical support for Linux, VMware, and Windows environments across enterprise deployments</li>
+                            <li>• Handled Linux server security, patch management, RCA analysis, and infrastructure upgrades</li>
+                            <li>• Facilitated platform migrations, OS re-platforming, and readiness assessments</li>
+                            <li>• Managed transition and operational handover of services from external vendors</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="section-title gradient-text">Featured Projects</h2>
+                <p class="section-subtitle">
+                    Showcasing innovative solutions and technical achievements
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="project-card animate-fade-in-up">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="skill-icon">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="flex space-x-2">
+                                <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded-full">Neo4j</span>
+                                <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded-full">LangChain</span>
+                                <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded-full">RAG</span>
+                                <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs rounded-full">AI</span>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Incident Management Automation</h3>
+                        <p class="text-gray-600 mb-4">
+                            Implemented auto-resolution using knowledge graphs and automation logic to reduce MTTR.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-chart-line mr-2"></i>
+                            <span>45% MTTR Reduction</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card animate-fade-in-up">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="skill-icon">
+                                <i class="fas fa-cloud"></i>
+                            </div>
+                            <div class="flex space-x-2">
+                                <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">AWS</span>
+                                <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">Azure</span>
+                                <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">GCP</span>
+                                <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full">Terraform</span>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Hybrid Cloud Patch Management</h3>
+                        <p class="text-gray-600 mb-4">
+                            Unified patching automation across AWS, Azure, GCP, and on-prem environments.
+                        </p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <i class="fas fa-shield-alt mr-2"></i>
+                            <span>Multi-cloud automation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="section-title gradient-text">Let's Connect</h2>
+                <p class="section-subtitle">
+                    Ready to discuss your next project or explore collaboration opportunities
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <a href="mailto:sanilraj@gmail.com" class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-800 mb-1">Email</h3>
+                        <p class="text-gray-600">sanilraj@gmail.com</p>
+                    </div>
+                </a>
+                
+                <a href="https://linkedin.com/in/sanilraj" class="contact-item" target="_blank" rel="noopener noreferrer">
+                    <div class="contact-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-800 mb-1">LinkedIn</h3>
+                        <p class="text-gray-600">linkedin.com/in/sanilraj</p>
+                    </div>
+                </a>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-800 mb-1">Location</h3>
+                        <p class="text-gray-600">Mysuru, India</p>
+                    </div>
+                </div>
+                
+                <a href="https://github.com/sanilraj" class="contact-item" target="_blank" rel="noopener noreferrer">
+                    <div class="contact-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-800 mb-1">GitHub</h3>
+                        <p class="text-gray-600">github.com/sanilraj</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-gray-900 text-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center">
+                <div class="font-bold text-2xl mb-4 gradient-text">Sanil Raj</div>
+                <p class="text-gray-400 mb-6">Hybrid Engineering Leader – Management | Architecture | Hands-on Delivery</p>
+                <div class="flex justify-center space-x-6 mb-8">
+                    <a href="https://linkedin.com/in/sanilraj" class="text-gray-400 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="https://github.com/sanilraj" class="text-gray-400 hover:text-white transition-colors" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="mailto:sanilraj@gmail.com" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </a>
+                </div>
+                <div class="border-t border-gray-800 pt-8">
+                    <p class="text-gray-400 text-sm">
+                        © 2025 Sanil Raj. Crafted with passion and precision.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Loading animation
+        window.addEventListener('load', function() {
+            document.body.classList.add('loaded');
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links - improved
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const navHeight = 80; // Account for fixed navigation
+                    const targetPosition = target.offsetTop - navHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Active navigation link highlighting - improved
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        function highlightNavLink() {
+            let current = '';
+            const scrollPosition = window.scrollY + 100; // Account for fixed nav
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        // Throttle scroll events for better performance
+        let ticking = false;
+        function requestTick() {
+            if (!ticking) {
+                requestAnimationFrame(highlightNavLink);
+                ticking = true;
+                setTimeout(() => { ticking = false; }, 10);
+            }
+        }
+
+        window.addEventListener('scroll', requestTick);
+
+        // Intersection Observer for animations - improved
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -20px 0px' /* Reduced from -50px */
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements with improved initialization
+        document.querySelectorAll('.animate-fade-in-up, .animate-fade-in-left, .animate-fade-in-right').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease'; /* Reduced duration */
+            observer.observe(el);
+        });
+
+        // Typing animation for tagline
+        const taglines = [
+            "Hybrid Engineering Leader",
+            "Management | Architecture | Hands-on Delivery", 
+            "Infrastructure Automation Expert",
+            "SaaS Platform Architect",
+            "Multi-tenant Cloud Solutions"
+        ];
+        
+        let taglineIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const taglineElement = document.getElementById('tagline');
+        
+        function typeTagline() {
+            const currentTagline = taglines[taglineIndex];
+            
+            if (isDeleting) {
+                taglineElement.textContent = currentTagline.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                taglineElement.textContent = currentTagline.substring(0, charIndex + 1);
+                charIndex++;
+            }
+            
+            let typeSpeed = isDeleting ? 50 : 100;
+            
+            if (!isDeleting && charIndex === currentTagline.length) {
+                typeSpeed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                taglineIndex = (taglineIndex + 1) % taglines.length;
+                typeSpeed = 500;
+            }
+            
+            setTimeout(typeTagline, typeSpeed);
+        }
+        
+        // Start typing animation after page load
+        setTimeout(typeTagline, 1000);
+    </script>
+</body>
+</html>

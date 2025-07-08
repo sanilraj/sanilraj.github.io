@@ -335,6 +335,7 @@
 
         #about .stats-grid {
             grid-auto-rows: 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         }
 
         #about .stats-grid .card {
@@ -342,6 +343,8 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            min-height: 150px;
+            height: 100%;
         }
 
         /* Skills section */

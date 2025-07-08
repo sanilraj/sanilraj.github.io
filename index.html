@@ -333,6 +333,17 @@
             margin-bottom: 0; /* Ensure no extra margin */
         }
 
+        #about .stats-grid {
+            grid-auto-rows: 1fr;
+        }
+
+        #about .stats-grid .card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
         /* Skills section */
         #skills {
             padding-top: 5rem;
@@ -698,22 +709,22 @@
                 </div>
                 
                 <div class="animate-fade-in-right">
-                    <div class="grid grid-cols-2 gap-6">
-                        <div class="card p-6 text-center">
-                            <div class="text-4xl font-black gradient-text mb-2">17+</div>
-                            <div class="text-gray-600 font-medium">Years Experience</div>
+                    <div class="stats-grid grid grid-cols-2 gap-6">
+                        <div class="card p-6 text-center flex flex-col items-center justify-center">
+                            <div class="text-4xl font-black gradient-text mb-2 leading-none">17+</div>
+                            <div class="text-gray-600 font-medium leading-snug">Years Experience</div>
                         </div>
-                        <div class="card p-6 text-center">
-                            <div class="text-4xl font-black gradient-text mb-2">50+</div>
-                            <div class="text-gray-600 font-medium">Solutions Delivered</div>
+                        <div class="card p-6 text-center flex flex-col items-center justify-center">
+                            <div class="text-4xl font-black gradient-text mb-2 leading-none">50+</div>
+                            <div class="text-gray-600 font-medium leading-snug">Solutions Delivered</div>
                         </div>
-                        <div class="card p-6 text-center">
-                            <div class="text-4xl font-black gradient-text mb-2">30+</div>
-                            <div class="text-gray-600 font-medium">Technologies Mastered</div>
+                        <div class="card p-6 text-center flex flex-col items-center justify-center">
+                            <div class="text-4xl font-black gradient-text mb-2 leading-none">30+</div>
+                            <div class="text-gray-600 font-medium leading-snug">Technologies Mastered</div>
                         </div>
-                        <div class="card p-6 text-center">
-                            <div class="text-4xl font-black gradient-text mb-2">20+</div>
-                            <div class="text-gray-600 font-medium">Professional Certifications</div>
+                        <div class="card p-6 text-center flex flex-col items-center justify-center">
+                            <div class="text-4xl font-black gradient-text mb-2 leading-none">20+</div>
+                            <div class="text-gray-600 font-medium leading-snug">Professional Certifications</div>
                         </div>
                     </div>
                 </div>

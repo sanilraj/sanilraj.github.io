@@ -514,6 +514,35 @@
             background: var(--gradient-primary);
         }
 
+        /* Certification cards */
+        .cert-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .cert-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+
+        .cert-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 4px;
+            background: var(--gradient-primary);
+        }
+
         /* Contact section */
         .contact-item {
             display: flex;
@@ -1114,29 +1143,92 @@
             <div class="text-center mb-16">
                 <h2 class="section-title gradient-text">Certifications</h2>
             </div>
-            <ul class="text-gray-600 space-y-2 max-w-3xl mx-auto">
-                <li>Red Hat Certified Architect in Infrastructure.</li>
-                <li>RedHat Certified Openstack System Administrator.</li>
-                <li>RedHat Certified Openshift Specialist.</li>
-                <li>Red Hat Certified Specialist in Advanced Automation.</li>
-                <li>Red Hat Certified Specialist in Virtualization.</li>
-                <li>Red Hat Certified Specialist in Ansible Automation.</li>
-                <li>RedHat Certified Engineer in Ansible and RedHat Linux 8.</li>
-                <li>RedHat Certified System Administrator in Redhat Linux 7.</li>
-                <li>Architectural Thinking (IBM Badge).</li>
-                <li>Architect Foundations (IBM Badge).</li>
-                <li>IBM Design Thinking Practitioner (IBM Badge).</li>
-                <li>Enterprise IT Transformation Advisor Level 4 (IBM Badge).</li>
-                <li>Docker Essentials(IBM Badge).</li>
-                <li>IBM Cloud Private Infrastructure and Architecture(IBM Badge).</li>
-                <li>IBM Recognised speaker presenter (IBM Badge).</li>
-                <li>IBM Recognised Teacher/Educator (IBM Badge).</li>
-                <li>Team Solution Design (IBM Badge).</li>
-                <li>Build Your Own Chatbot - Level 1 (IBM Badge).</li>
-                <li>Get started with Kubernetes and IBM Cloud Container Service (IBM Badge).</li>
-                <li>ScienceLogic Certified Professional.</li>
-                <li>ITIL v3 foundation certified.</li>
-            </ul>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="cert-card animate-fade-in-up">
+                    <div class="skill-icon"><i class="fas fa-certificate"></i></div>
+                    <p class="font-semibold text-gray-800">Red Hat Certified Architect in Infrastructure</p>
+                </div>
+                <div class="cert-card animate-fade-in-up">
+                    <div class="skill-icon"><i class="fas fa-certificate"></i></div>
+                    <p class="font-semibold text-gray-800">RedHat Certified Openstack System Administrator</p>
+                </div>
+                <div class="cert-card animate-fade-in-up">
+                    <div class="skill-icon"><i class="fas fa-certificate"></i></div>
+                    <p class="font-semibold text-gray-800">RedHat Certified Openshift Specialist</p>
+                </div>
+                <div class="cert-card animate-fade-in-up">
+                    <div class="skill-icon"><i class="fas fa-certificate"></i></div>
+                    <p class="font-semibold text-gray-800">Red Hat Certified Specialist in Advanced Automation</p>
+                </div>
+                <div class="cert-card animate-fade-in-up">
+                    <div class="skill-icon"><i class="fas fa-certificate"></i></div>
+                    <p class="font-semibold text-gray-800">Red Hat Certified Specialist in Virtualization</p>
+                </div>
+                <div class="cert-card animate-fade-in-up">
+                    <div class="skill-icon"><i class="fas fa-certificate"></i></div>
+                    <p class="font-semibold text-gray-800">Red Hat Certified Specialist in Ansible Automation</p>
+                </div>
+                <div class="cert-card animate-fade-in-up">
+                    <div class="skill-icon"><i class="fas fa-certificate"></i></div>
+                    <p class="font-semibold text-gray-800">RedHat Certified Engineer in Ansible and RedHat Linux 8</p>
+                </div>
+                <div class="cert-card animate-fade-in-up">
+                    <div class="skill-icon"><i class="fas fa-certificate"></i></div>
+                    <p class="font-semibold text-gray-800">RedHat Certified System Administrator in Redhat Linux 7</p>
+                </div>
+                <div class="cert-card animate-fade-in-up">
+                    <div class="skill-icon"><i class="fas fa-certificate"></i></div>
+                    <p class="font-semibold text-gray-800">Architectural Thinking (IBM Badge)</p>
+                </div>
+                <div class="cert-card animate-fade-in-up">
+                    <div class="skill-icon"><i class="fas fa-certificate"></i></div>
+                    <p class="font-semibold text-gray-800">Architect Foundations (IBM Badge)</p>
+                </div>
+                <div class="cert-card animate-fade-in-up">
+                    <div class="skill-icon"><i class="fas fa-certificate"></i></div>
+                    <p class="font-semibold text-gray-800">IBM Design Thinking Practitioner (IBM Badge)</p>
+                </div>
+                <div class="cert-card animate-fade-in-up">
+                    <div class="skill-icon"><i class="fas fa-certificate"></i></div>
+                    <p class="font-semibold text-gray-800">Enterprise IT Transformation Advisor Level 4 (IBM Badge)</p>
+                </div>
+                <div class="cert-card animate-fade-in-up">
+                    <div class="skill-icon"><i class="fas fa-certificate"></i></div>
+                    <p class="font-semibold text-gray-800">Docker Essentials (IBM Badge)</p>
+                </div>
+                <div class="cert-card animate-fade-in-up">
+                    <div class="skill-icon"><i class="fas fa-certificate"></i></div>
+                    <p class="font-semibold text-gray-800">IBM Cloud Private Infrastructure and Architecture (IBM Badge)</p>
+                </div>
+                <div class="cert-card animate-fade-in-up">
+                    <div class="skill-icon"><i class="fas fa-certificate"></i></div>
+                    <p class="font-semibold text-gray-800">IBM Recognised speaker presenter (IBM Badge)</p>
+                </div>
+                <div class="cert-card animate-fade-in-up">
+                    <div class="skill-icon"><i class="fas fa-certificate"></i></div>
+                    <p class="font-semibold text-gray-800">IBM Recognised Teacher/Educator (IBM Badge)</p>
+                </div>
+                <div class="cert-card animate-fade-in-up">
+                    <div class="skill-icon"><i class="fas fa-certificate"></i></div>
+                    <p class="font-semibold text-gray-800">Team Solution Design (IBM Badge)</p>
+                </div>
+                <div class="cert-card animate-fade-in-up">
+                    <div class="skill-icon"><i class="fas fa-certificate"></i></div>
+                    <p class="font-semibold text-gray-800">Build Your Own Chatbot - Level 1 (IBM Badge)</p>
+                </div>
+                <div class="cert-card animate-fade-in-up">
+                    <div class="skill-icon"><i class="fas fa-certificate"></i></div>
+                    <p class="font-semibold text-gray-800">Get started with Kubernetes and IBM Cloud Container Service (IBM Badge)</p>
+                </div>
+                <div class="cert-card animate-fade-in-up">
+                    <div class="skill-icon"><i class="fas fa-certificate"></i></div>
+                    <p class="font-semibold text-gray-800">ScienceLogic Certified Professional</p>
+                </div>
+                <div class="cert-card animate-fade-in-up">
+                    <div class="skill-icon"><i class="fas fa-certificate"></i></div>
+                    <p class="font-semibold text-gray-800">ITIL v3 foundation certified</p>
+                </div>
+            </div>
         </div>
     </section>
 
